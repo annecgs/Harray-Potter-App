@@ -3,8 +3,6 @@ package com.example.harraypotterapp.data.remote.dto
 data class PersonagensItem(
     val actor: String,
     val alive: Boolean,
-    val alternate_actors: List<Any>,
-    val alternate_names: List<Any>,
     val ancestry: String,
     val dateOfBirth: String,
     val eyeColour: String,
@@ -17,7 +15,7 @@ data class PersonagensItem(
     val name: String,
     val patronus: String,
     val species: String,
-    val wand: Wand,
     val wizard: Boolean,
-    val yearOfBirth: Int
+    val yearOfBirth: String,
+    var isFavorite: Boolean = false
 )

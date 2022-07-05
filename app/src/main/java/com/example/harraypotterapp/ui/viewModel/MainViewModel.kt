@@ -13,52 +13,60 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.lang.Exception
 
-class MainViewModel(
-    private val iHogwartsRepository: IHogwartsRepository
-) : ViewModel() {
+class MainViewModel(private val iHogwartsRepository: IHogwartsRepository) : ViewModel() {
 
-    private val _personagenSelected = MutableLiveData<PersonagensItem>()
-    val personagenSelected: LiveData<PersonagensItem> = _personagenSelected
     private val _personagensItem = MutableLiveData<PersonagemApiResult<List<PersonagensItem>>>()
-    val personagenItem: LiveData<PersonagemApiResult<List<PersonagensItem>>> = _personagensItem
-    var personagenFromApi: List<PersonagensItem> = ArrayList()
+    val personagemItem: LiveData<PersonagemApiResult<List<PersonagensItem>>> = _personagensItem
+
+    private val _personagemSelected = MutableLiveData<PersonagensItem>()
+    val personagemSelected: LiveData<PersonagensItem> = _personagemSelected
+
+    var personagemFromApi: List<PersonagensItem> = ArrayList()
 
     // tratamento de erros
     var mensagem = ""
 
-    fun setPersonagen(name: String) {
+    fun setPersonagens(personagemId: String) {
         viewModelScope.launch {
             _personagensItem.value = PersonagemApiResult.Loading()
             try {
-                if (personagenFromApi.isNullOrEmpty()) {
-                    personagenFromApi = withContext(Dispatchers.IO) {
+                if (personagemFromApi.isNullOrEmpty()) {
+                    personagemFromApi = withContext(Dispatchers.IO) {
+                        // IpokemonsRepository.getPokedex()
                         iHogwartsRepository.getPersonagens()
                     }
                 }
-                _personagenSelected.value = personagenFromApi.find { it.name == name }
-                _personagensItem.value = PersonagemApiResult.Success(personagenFromApi)
+                _personagemSelected.value = personagemFromApi.find { it.name == personagemId }
+                _personagensItem.value = PersonagemApiResult.Success(personagemFromApi)
             } catch (e: Exception) {
-                val coinResult = PersonagemApiResult.Error<List<PersonagensItem>>(e)
-                _personagensItem.value = coinResult
+                val personagemResult = PersonagemApiResult.Error<List<PersonagensItem>>(e)
+                _personagensItem.value = personagemResult
             }
         }
     }
 
-    fun getPersonagenFromRetrofit() {
+    fun getPersonagensFromRetrofit() {
         viewModelScope.launch {
             _personagensItem.value = PersonagemApiResult.Loading()
             try {
-                if (personagenFromApi.isNullOrEmpty()) {
-                    personagenFromApi = withContext(Dispatchers.IO) {
+                if (personagemFromApi.isNullOrEmpty()) {
+                    personagemFromApi = withContext(Dispatchers.IO) {
+                        // IpokemonsRepository.getPokedex()
                         iHogwartsRepository.getPersonagens()
                     }
                 }
-                _personagensItem.value = PersonagemApiResult.Success(personagenFromApi)
+                _personagensItem.value = PersonagemApiResult.Success(personagemFromApi)
             } catch (e: Exception) {
                 val personagemResult = PersonagemApiResult.Error<List<PersonagensItem>>(e)
-                Log.d("PersonagenResult", "setPersonagem: $personagemResult")
+                Log.d("PersonagemResult", "Personagem:  ${personagemResult.throwable.message}")
                 _personagensItem.value = personagemResult
             }
+        }
+    }
+
+    fun setFavorite(isFavorite: Boolean) {
+        viewModelScope.launch {
+            _personagemSelected.value?.isFavorite = isFavorite
         }
     }
 }

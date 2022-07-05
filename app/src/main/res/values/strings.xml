@@ -6,7 +6,8 @@
     <string name="nav_header_subtitle">Segunda-Feira, 04/07/2022</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
+    <string name="defaultQueryHint">Nome</string>
+    <string name="simbolo_favorito">Pessoa classificada como favorita</string>
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>

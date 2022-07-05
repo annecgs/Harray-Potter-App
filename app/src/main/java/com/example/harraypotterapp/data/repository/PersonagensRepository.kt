@@ -8,6 +8,7 @@ import kotlinx.coroutines.withContext
 class PersonagensRepository(private val hogwartsClient: IHogwartsClient) : IHogwartsRepository {
     override suspend fun getPersonagens(): List<PersonagensItem> {
         return withContext(Dispatchers.IO) {
+            // hogwartsClient.getData().body()!!.personagens
             hogwartsClient.getData()
         }
     }
