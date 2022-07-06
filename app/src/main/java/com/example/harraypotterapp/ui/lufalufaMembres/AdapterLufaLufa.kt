@@ -1,6 +1,7 @@
 package com.example.harraypotterapp.ui.lufalufaMembres
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -23,6 +24,7 @@ class AdapterLufaLufa : ListAdapter<PersonagensItem, AdapterLufaLufa.ViewHolder>
             findPatrono(x)
             findAncestral(x)
             findHouse(x)
+            findFavorite(x)
             setImage(x)
 
             /* binding.linearLayout2.setOnClickListener {
@@ -71,6 +73,14 @@ class AdapterLufaLufa : ListAdapter<PersonagensItem, AdapterLufaLufa.ViewHolder>
                 binding.tvAncestry.text = "Ancestral: " + x.ancestry
             } else {
                 binding.tvAncestry.text = "Ancestral não encontrado"
+            }
+        }
+
+        private fun findFavorite(x: PersonagensItem) {
+            if (x.isFavorite) {
+                binding.imageView3.visibility = View.VISIBLE
+            } else {
+                binding.imageView3.visibility = View.GONE
             }
         }
 

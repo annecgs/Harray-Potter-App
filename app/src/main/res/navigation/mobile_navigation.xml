@@ -34,4 +34,10 @@
         android:name="com.example.harraypotterapp.ui.sonserinaMembres.SonserinaFragment"
         android:label="@string/menu_sonserina"
         tools:layout="@layout/fragment_sonserina"/>
+
+    <fragment
+        android:id="@+id/nav_favoritos"
+        android:name="com.example.harraypotterapp.ui.favorites.FavoritesFragment"
+        android:label="@string/menu_favoritos"
+        tools:layout="@layout/fragment_favorites"/>
 </navigation>

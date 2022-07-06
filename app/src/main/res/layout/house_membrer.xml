@@ -11,7 +11,7 @@
     android:background="#191919"
     android:maxHeight="220dp"
     android:paddingBottom="12dp"
-    android:paddingHorizontal="16dp">
+    android:paddingHorizontal="30dp">
 
     <LinearLayout
         android:id="@+id/linearLayout2"

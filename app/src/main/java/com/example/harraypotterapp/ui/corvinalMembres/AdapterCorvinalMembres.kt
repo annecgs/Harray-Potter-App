@@ -1,6 +1,7 @@
 package com.example.harraypotterapp.ui.corvinalMembres
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -23,6 +24,7 @@ class AdapterCorvinalMembres : ListAdapter<PersonagensItem, AdapterCorvinalMembr
             findPatrono(x)
             findAncestral(x)
             findHouse(x)
+            findFavorite(x)
             setImage(x)
 
             /* binding.linearLayout2.setOnClickListener {
@@ -79,6 +81,14 @@ class AdapterCorvinalMembres : ListAdapter<PersonagensItem, AdapterCorvinalMembr
                 binding.tvPatronus.text = "Patrono: " + x.patronus
             } else {
                 binding.tvPatronus.text = "Patrono não encontrado"
+            }
+        }
+
+        private fun findFavorite(x: PersonagensItem) {
+            if (x.isFavorite) {
+                binding.imageView3.visibility = View.VISIBLE
+            } else {
+                binding.imageView3.visibility = View.GONE
             }
         }
     }

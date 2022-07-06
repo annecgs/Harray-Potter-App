@@ -1,6 +1,7 @@
 package com.example.harraypotterapp.ui.grifinoriaMembres
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -23,6 +24,7 @@ class AdapterGrifinoriaMembres : ListAdapter<PersonagensItem, AdapterGrifinoriaM
             findAncestral(x)
             findPatrono(x)
             findHouse(x)
+            findFavorite(x)
             setImage(x)
 
            /* binding.linearLayout2.setOnClickListener {
@@ -63,6 +65,14 @@ class AdapterGrifinoriaMembres : ListAdapter<PersonagensItem, AdapterGrifinoriaM
                 Glide.with(binding.root.context)
                     .load(R.drawable.bruxonaoidentificado)
                     .into(binding.imageMembrer)
+            }
+        }
+
+        private fun findFavorite(x: PersonagensItem) {
+            if (x.isFavorite) {
+                binding.imageView3.visibility = View.VISIBLE
+            } else {
+                binding.imageView3.visibility = View.GONE
             }
         }
 
