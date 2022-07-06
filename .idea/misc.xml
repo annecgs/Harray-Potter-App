@@ -5,18 +5,24 @@
       <map>
         <entry key="..\:/Users/agomesou/AndroidStudioProjects/HarrayPotterApp/app/src/main/res/drawable-v24/bg_button.xml" value="0.1" />
         <entry key="..\:/Users/agomesou/AndroidStudioProjects/HarrayPotterApp/app/src/main/res/drawable-v24/bg_divider.xml" value="0.137" />
+        <entry key="..\:/Users/agomesou/AndroidStudioProjects/HarrayPotterApp/app/src/main/res/drawable-v24/bg_item_favorite.xml" value="0.1385" />
         <entry key="..\:/Users/agomesou/AndroidStudioProjects/HarrayPotterApp/app/src/main/res/drawable-v24/bg_search_view.xml" value="0.1" />
         <entry key="..\:/Users/agomesou/AndroidStudioProjects/HarrayPotterApp/app/src/main/res/drawable-v24/ic_baseline_keyboard_arrow_up_24.xml" value="0.1" />
+        <entry key="..\:/Users/agomesou/AndroidStudioProjects/HarrayPotterApp/app/src/main/res/drawable/ic_baseline_chevron_left_24.xml" value="0.152" />
         <entry key="..\:/Users/agomesou/AndroidStudioProjects/HarrayPotterApp/app/src/main/res/drawable/side_nav_bar.xml" value="0.165" />
-        <entry key="..\:/Users/agomesou/AndroidStudioProjects/HarrayPotterApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/agomesou/AndroidStudioProjects/HarrayPotterApp/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/agomesou/AndroidStudioProjects/HarrayPotterApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.1796875" />
         <entry key="..\:/Users/agomesou/AndroidStudioProjects/HarrayPotterApp/app/src/main/res/layout/app_bar_main.xml" value="0.1" />
         <entry key="..\:/Users/agomesou/AndroidStudioProjects/HarrayPotterApp/app/src/main/res/layout/content_main.xml" value="0.1796875" />
         <entry key="..\:/Users/agomesou/AndroidStudioProjects/HarrayPotterApp/app/src/main/res/layout/divider.xml" value="0.1796875" />
         <entry key="..\:/Users/agomesou/AndroidStudioProjects/HarrayPotterApp/app/src/main/res/layout/fragment_gallery.xml" value="0.1" />
         <entry key="..\:/Users/agomesou/AndroidStudioProjects/HarrayPotterApp/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Users/agomesou/AndroidStudioProjects/HarrayPotterApp/app/src/main/res/layout/fragment_info.xml" value="0.1" />
         <entry key="..\:/Users/agomesou/AndroidStudioProjects/HarrayPotterApp/app/src/main/res/layout/fragment_slideshow.xml" value="0.1" />
+        <entry key="..\:/Users/agomesou/AndroidStudioProjects/HarrayPotterApp/app/src/main/res/layout/house_membrer.xml" value="0.1" />
         <entry key="..\:/Users/agomesou/AndroidStudioProjects/HarrayPotterApp/app/src/main/res/layout/layout_header.xml" value="0.1796875" />
+        <entry key="..\:/Users/agomesou/AndroidStudioProjects/HarrayPotterApp/app/src/main/res/layout/layout_header_corvinal.xml" value="0.15520833333333334" />
+        <entry key="..\:/Users/agomesou/AndroidStudioProjects/HarrayPotterApp/app/src/main/res/layout/layout_header_grifinoria.xml" value="0.1796875" />
         <entry key="..\:/Users/agomesou/AndroidStudioProjects/HarrayPotterApp/app/src/main/res/layout/nav_header_main.xml" value="0.1" />
         <entry key="..\:/Users/agomesou/AndroidStudioProjects/HarrayPotterApp/app/src/main/res/layout/people_item.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/agomesou/AndroidStudioProjects/HarrayPotterApp/app/src/main/res/menu/activity_main_drawer.xml" value="0.1796875" />

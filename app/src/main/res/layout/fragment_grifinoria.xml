@@ -63,7 +63,7 @@
         android:visibility="gone"
         tools:visibility="visible"
         android:background="#AAAAAA"
-        app:layout_constraintBottom_toTopOf="@+id/rv_grifinioriaMembres"
+        app:layout_constraintBottom_toTopOf="@+id/rv_grifinoriaMembres"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,7 +71,7 @@
         />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_grifinioriaMembres"
+        android:id="@+id/rv_grifinoriaMembres"
         android:layout_width="400dp"
         android:layout_height="404dp"
         android:layout_marginTop="48dp"

@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.harraypotterapp.R
 import com.example.harraypotterapp.data.remote.dto.PersonagemApiResult
 import com.example.harraypotterapp.data.remote.dto.PersonagensItem
 import com.example.harraypotterapp.databinding.FragmentHomeBinding
@@ -119,14 +120,14 @@ class HomeFragment : Fragment() {
 
         adapterHome.onClickListener = { personagemId ->
             viewModel.setPersonagens(personagemId)
-            // replaceFragment(InfoFragment())
+            replaceFragment(InfoFragment())
         }
     }
 
     private fun replaceFragment(fragment: Fragment) {
         val fragmentManager = activity?.supportFragmentManager
         val fragmentTransaction = fragmentManager?.beginTransaction()
-        // fragmentTransaction?.replace(R.id.nav_fragment, fragment)
+        fragmentTransaction?.replace(R.id.nav_fragment, fragment)
         fragmentTransaction?.addToBackStack(null)
         fragmentTransaction?.commit()
     }

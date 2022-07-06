@@ -1,19 +1,24 @@
-package com.example.harraypotterapp.ui.gallery
+package com.example.harraypotterapp.ui.grifinoriaMembres
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.example.harraypotterapp.databinding.FragmentGalleryBinding
+import androidx.fragment.app.activityViewModels
+import com.example.harraypotterapp.R
+import com.example.harraypotterapp.data.remote.dto.PersonagemApiResult
+import com.example.harraypotterapp.data.remote.dto.PersonagensItem
+import com.example.harraypotterapp.databinding.FragmentGrifinoriaBinding
+import com.example.harraypotterapp.ui.viewModel.MainViewModel
+import com.example.harraypotterapp.utils.Helpers
 
-class GalleryFragment : Fragment() {
-
-    private var _binding: FragmentGalleryBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+class GrifinoriaFragment : Fragment() {
+    private val viewModel: MainViewModel by activityViewModels { Helpers.getMainViewModelFactory() }
+    private lateinit var adapter: AdapterGrifinoriaMembres
+    //private var _binding: FragmentGalleryBinding? = null
+    private var _binding: FragmentGrifinoriaBinding?= null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -21,17 +26,104 @@ class GalleryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val galleryViewModel =
-            ViewModelProvider(this).get(GalleryViewModel::class.java)
 
-        _binding = FragmentGalleryBinding.inflate(inflater, container, false)
+        _binding = FragmentGrifinoriaBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-       /* val textView: TextView = binding.textGallery
-        galleryViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        setupAdapter()
+
+       /* adapter.onClickListener = { pokemonId ->
+            viewModel.setPokemon(pokemonId)
+            replaceFragment(InfoFragment())
         }*/
+
         return root
+    }
+
+    private fun setupAdapter() {
+        adapter = AdapterGrifinoriaMembres()
+        binding.rvGrifinoriaMembres.adapter = adapter
+
+        // val layoutManager = GridLayoutManager(activity, 2)
+        // layoutManager.orientation = RecyclerView.VERTICAL
+        // binding.rvGrifinioriaMembres.layoutManager = layoutManager
+        // binding.rvGrifinioriaMembres.adapter = adapter
+
+        viewModel.personagemItem.observe(viewLifecycleOwner) { listPersonagens ->
+            getMembresGrifindor(listPersonagens)
+        }
+    }
+
+    private fun setupSearchView(list: List<PersonagensItem>) {
+        var newList: MutableList<PersonagensItem> = ArrayList()
+        binding.serchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                binding.serchView.clearFocus()
+                newList = Helpers.FilterListQuery(query, list)
+                setlistQueryAdapter(newList)
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                newList = Helpers.FilterListQuery(newText, list)
+                setlistQueryAdapter(newList)
+                return true
+            }
+        })
+    }
+
+    private fun setlistQueryAdapter(newList: MutableList<PersonagensItem>) {
+        if (newList.isNotEmpty()) {
+            setListAdapter(newList)
+            binding.widgetListEmpty.visibility = View.GONE
+            binding.rvGrifinoriaMembres.visibility = View.VISIBLE
+            binding.includeDivider.root.visibility = View.VISIBLE
+            // binding.progressBar.visibility = View.GONE
+        } else {
+            binding.rvGrifinoriaMembres.visibility = View.GONE
+            binding.includeDivider.root.visibility = View.GONE
+            binding.widgetListEmpty.visibility = View.VISIBLE
+            // binding.progressBar.visibility = View.GONE
+        }
+    }
+
+    private fun setListAdapter(list: List<PersonagensItem>) {
+        adapter.submitList(list)
+        adapter.notifyDataSetChanged()
+    }
+
+    private fun getMembresGrifindor(list: PersonagemApiResult<List<PersonagensItem>>) {
+        val tempList: MutableList<PersonagensItem> = ArrayList()
+        when (list) {
+            is PersonagemApiResult.Success -> {
+                list.data.forEach {
+                    if (it.house == "Gryffindor") {
+                        tempList.add(it)
+                    }
+                }
+                setupSearchView(tempList as List<PersonagensItem>)
+            }
+
+            is PersonagemApiResult.Error -> {
+                // errorFragment = ErrorFragment()
+                // replaceFragment(ErrorFragment())
+            }
+        }
+
+        Log.d(
+            "ListFilter",
+            "getFavorites: $tempList"
+        )
+
+        adapter.submitList(tempList)
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        val fragmentManager = activity?.supportFragmentManager
+        val fragmentTransaction = fragmentManager?.beginTransaction()
+        fragmentTransaction?.replace(R.id.nav_fragment, fragment)
+        fragmentTransaction?.addToBackStack(null)
+        fragmentTransaction?.commit()
     }
 
     override fun onDestroyView() {

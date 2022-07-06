@@ -1,14 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#191919"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.home.InfoFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/btn_return"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elegantTextHeight="true"
+        android:padding="16dp"
+        android:text="@string/go_back"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:textSize="17sp"
+        android:drawableTint="@color/white"
+        app:drawableLeftCompat="@drawable/ic_baseline_chevron_left_24"
+        app:layout_constraintEnd_toStartOf="@+id/imagePeople"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/imagePeople"
+        android:layout_width="184dp"
+        android:layout_height="155dp"
+        android:gravity="center"
+        tools:layout_editor_absoluteX="104dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:srcCompat="@tools:sample/avatars"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/iv_favorite"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="88dp"
+        android:contentDescription="Marcado como favorito"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/iconstar"
+        tools:layout_editor_absoluteY="29dp"
+        tools:visibility="visible"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/casaIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/grifinoria"
+        tools:layout_editor_absoluteX="228dp"
+        tools:layout_editor_absoluteY="107dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_addFavorite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginHorizontal="32dp"
+        android:background="@drawable/bg_button"
+        android:hint="@string/add"
+        android:padding="5dp"
+        android:text="ADICIONAR"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagePeople"  />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#2F4F4F"
+        android:gravity="top|center_horizontal"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_addFavorite">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Ficha Cadastral"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/oficio"
+                android:text="Oficio: "
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tv_oficio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:hint="@string/oficio"
+                android:maxLines="1"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/dataNascimento"
+                android:text="data de nascimento: "
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tv_dataNascimento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:hint="@string/dataNascimento"
+                android:maxLines="1"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/genero"
+                android:text="Gênero: "
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tv_genero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:hint="@string/genero"
+                android:maxLines="1"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
