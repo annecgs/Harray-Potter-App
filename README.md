@@ -1,6 +1,6 @@
 # App Harray Potter
 
-![Badge](https://visitor-counter-badge.vercel.app/api/annecgs/Harray-Potter-App/visitor-counter-badge/?label=Visitor&color=363636&labelColor=8B008B)
+![Badge](https://visitor-counter-badge.vercel.app/api/annecgs/Harray-Potter-App/visitor-counter-badge/?label=Visitor&color=363636&labelColor=4682B4)
 <p>Projeto pessoal desenvolvido para fins de estudo de mobile com aplicação da linguagem kotlin</p>
 
 <h2>Informações do projeto</h2>
@@ -8,17 +8,17 @@
 
 <h2>Tecnolgias e recursos utilizados para o desenvolvimento</h2>
 <li>Retrofit para realizar a requisição da API</li>
-<li>converter-gson para atividades de serialização de objetos</li>
+<li>Moshi para atividades de serialização de objetos</li>
 <li>Glide para carregar as imagens</li>
 <li>Aplicação de fragments para reaproveitamento dos objetos visuais</li>
-<li>Tratativa dos erros de API</li>
+<li>Tratativa dos erros de API (a fazer!)</li>
 <li>Arquitetura MVVM</li>
 <li>Boas práticas com aplicação do Ktlint</li>
 <li>Acessibilidade, utilizar https://developer.android.com/guide/topics/ui/accessibility/principles para
 referência ou https://guia-wcag.com/ ;
-<li>Suporte versão do Android 12;</li>
-<li>Modularização;</li>
-<li>Testes unitários em JUnit (em andamento);</li>
+<li>Suporte versão do Android 12 (a fazer!);</li>
+<li>Modularização (a fazer!);</li>
+<li>Testes unitários em JUnit (a fazer!);</li>
 
 <h2>As características funcionais e não funcionais do app consistem em:</h2>
 <li>Lista de personagens com scrolling infinito;</li>
