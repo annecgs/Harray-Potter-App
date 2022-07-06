@@ -50,4 +50,5 @@ favorito)</li>
 <li>core:core-testing</li>
 
 <h2>Direitos autorais da imagens utilizadas no app</h2>
-<li>Imagem utilizada no Splash Screen: <a><href="https://br.pinterest.com/pin/8585055527636654/">Maraisa Souza (Pinterest)</a></li>
+<a href="https://br.pinterest.com/pin/8585055527636654/"><li>Imagem utilizada no Splash Screen: Maraisa Souza (Pinterest)</li></a>
+<a href="https://br.pinterest.com/pin/6755468181965453/"><li>Icons utilizados nas casas (grifinória, lufa lufa, corvinal e sonserina): deviantart.com</li></a>
