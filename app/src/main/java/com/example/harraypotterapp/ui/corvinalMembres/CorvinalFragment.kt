@@ -17,8 +17,7 @@ import com.example.harraypotterapp.utils.Helpers
 class CorvinalFragment : Fragment() {
     private val viewModel: MainViewModel by activityViewModels { Helpers.getMainViewModelFactory() }
     private lateinit var adapter: AdapterCorvinalMembres
-   // private var _binding: FragmentSlideshowBinding? = null
-    private var _binding: FragmentCorvinalBinding?= null
+    private var _binding: FragmentCorvinalBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
