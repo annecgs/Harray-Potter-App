@@ -1,60 +1,99 @@
 package com.example.harraypotterapp.ui.favorites
 
+import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.harraypotterapp.R
+import com.example.harraypotterapp.data.remote.dto.PersonagemApiResult
+import com.example.harraypotterapp.data.remote.dto.PersonagensItem
+import com.example.harraypotterapp.databinding.FragmentFavoritesBinding
+import com.example.harraypotterapp.ui.viewModel.MainViewModel
+import com.example.harraypotterapp.utils.Helpers
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [FavoritesFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class FavoritesFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private val viewModel: MainViewModel by activityViewModels { Helpers.getMainViewModelFactory() }
+    private lateinit var adapter: AdapterFavoritos
+    private var _binding: FragmentFavoritesBinding? = null
+    private val binding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
+    ): View? {
+        _binding = FragmentFavoritesBinding.inflate(inflater, container, false)
+        val root: View = binding.root
+
+        setupAdapter()
+
+       /* adapter.onClickListener = { pokemonId ->
+            viewModel.setPokemon(pokemonId)
+            replaceFragment(InfoFragment())
+        }*/
+
+        return root
+    }
+
+    private fun setupAdapter() {
+        adapter = AdapterFavoritos()
+
+        val layoutManager = GridLayoutManager(activity, 2)
+        layoutManager.orientation = RecyclerView.HORIZONTAL
+
+        binding.rvFavoritos.layoutManager = layoutManager
+
+        binding.rvFavoritos.adapter = adapter
+
+        viewModel.personagemItem.observe(viewLifecycleOwner) { listPokemons ->
+            getFavorites(listPokemons)
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favorites, container, false)
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FavoritesFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FavoritesFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    private fun getFavorites(list: PersonagemApiResult<List<PersonagensItem>>) {
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
+        Log.d("ListFavorites", "getFavorites: ${sharedPref.all}")
+        if (sharedPref.all.isEmpty()) binding.tvNoFavorites.visibility = View.VISIBLE else binding.tvNoFavorites.visibility = View.GONE
+        val tempList: MutableList<PersonagensItem> = ArrayList()
+        when (list) {
+            is PersonagemApiResult.Success -> {
+                list.data.forEach {
+                    if (sharedPref.all.contains(it.name)) {
+                        tempList.add(it)
+                    }
                 }
             }
+
+            is PersonagemApiResult.Error -> {
+                // errorFragment = ErrorFragment()
+                // replaceFragment(ErrorFragment())
+            }
+        }
+
+        Log.d(
+            "ListFilter",
+            "getFavorites: $tempList"
+        )
+
+        adapter.submitList(tempList)
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        val fragmentManager = activity?.supportFragmentManager
+        val fragmentTransaction = fragmentManager?.beginTransaction()
+        fragmentTransaction?.replace(R.id.nav_fragment, fragment)
+        fragmentTransaction?.addToBackStack(null)
+        fragmentTransaction?.commit()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
