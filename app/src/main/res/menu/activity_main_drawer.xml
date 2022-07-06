@@ -22,5 +22,10 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_lufalufa" />
 
+        <item
+            android:id="@+id/nav_sonserina"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/menu_sonserina" />
+
     </group>
 </menu>

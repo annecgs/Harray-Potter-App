@@ -28,4 +28,10 @@
         android:name="com.example.harraypotterapp.ui.lufalufaMembres.LufaLufaFragment"
         android:label="@string/menu_lufalufa"
         tools:layout="@layout/fragment_lufa_lufa"/>
+
+    <fragment
+        android:id="@+id/nav_sonserina"
+        android:name="com.example.harraypotterapp.ui.sonserinaMembres.SonserinaFragment"
+        android:label="@string/menu_sonserina"
+        tools:layout="@layout/fragment_sonserina"/>
 </navigation>
