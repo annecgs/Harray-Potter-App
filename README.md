@@ -37,7 +37,11 @@ favorito)</li>
 <img src="https://user-images.githubusercontent.com/103140224/177156105-42d870a2-ad32-45e3-862d-ebac3862e9ff.png" width="220px" height="350px"/>
 <img src="https://user-images.githubusercontent.com/103140224/177796681-79c63daf-64ff-4e38-a263-0f226f504c5f.png" width="220px" height="350px"/>
 <img src="https://user-images.githubusercontent.com/103140224/177796964-db9c52d8-8d6f-4f1c-ac27-e208aba42f76.png" width="220px" height="350px"/>
-<img src="https://user-images.githubusercontent.com/103140224/177797000-f8c0c0ef-f7b3-4784-845f-3e4fd77f1bc8.png"  width="220px" height="350px"/>  
+<img src="https://user-images.githubusercontent.com/103140224/177797000-f8c0c0ef-f7b3-4784-845f-3e4fd77f1bc8.png" width="220px" height="350px"/>
+<img src="https://user-images.githubusercontent.com/103140224/177798276-a4a2ff7b-5ccf-4595-80b9-8929c9867e18.png" width="220px" height="350px"/>
+<img src="https://user-images.githubusercontent.com/103140224/177798306-5fba8cf7-527c-420e-9d33-9c5a599d66d0.png" width="220px" height="350px"/>
+<img src="https://user-images.githubusercontent.com/103140224/177798331-e76d8786-9ad5-40f3-b156-ea9432427705.png" width="220px" height="350px"/>
+<img src="https://user-images.githubusercontent.com/103140224/177798245-a3a2e420-f461-4452-8a8e-cef8da575f20.png" width="220px" height="350px"/>
 </p>
 
 
