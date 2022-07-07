@@ -127,7 +127,7 @@ class HomeFragment : Fragment() {
     private fun replaceFragment(fragment: Fragment) {
         val fragmentManager = activity?.supportFragmentManager
         val fragmentTransaction = fragmentManager?.beginTransaction()
-        fragmentTransaction?.replace(R.id.nav_fragment, fragment)
+        fragmentTransaction?.replace(R.id.nav_host_fragment_content_main, fragment)
         fragmentTransaction?.addToBackStack(null)
         fragmentTransaction?.commit()
     }

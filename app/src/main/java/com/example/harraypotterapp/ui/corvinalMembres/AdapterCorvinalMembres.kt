@@ -12,10 +12,10 @@ import com.example.harraypotterapp.data.remote.dto.PersonagensItem
 import com.example.harraypotterapp.databinding.HouseMembrerBinding
 
 class AdapterCorvinalMembres : ListAdapter<PersonagensItem, AdapterCorvinalMembres.ViewHolder>(DIFF_CALLBACK) {
-    var onClickListener: ((pokemonId: Int) -> Unit)? = null
+    var onClickListener: ((pokemonId: String) -> Unit)? = null
     class ViewHolder(
         private val binding: HouseMembrerBinding,
-        private val onClickListener: ((pokemonId: Int) -> Unit)? = null
+        private val onClickListener: ((pokemonId: String) -> Unit)? = null
 
     ) : RecyclerView.ViewHolder(binding.root) {
 
@@ -27,9 +27,9 @@ class AdapterCorvinalMembres : ListAdapter<PersonagensItem, AdapterCorvinalMembr
             findFavorite(x)
             setImage(x)
 
-            /* binding.linearLayout2.setOnClickListener {
+            binding.linearLayout2.setOnClickListener {
                  onClickListener?.invoke(x.name)
-             }*/
+             }
         }
 
         private fun findHouse(x: PersonagensItem) {

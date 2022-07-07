@@ -11,13 +11,13 @@ import com.example.harraypotterapp.R
 import com.example.harraypotterapp.data.remote.dto.PersonagemApiResult
 import com.example.harraypotterapp.data.remote.dto.PersonagensItem
 import com.example.harraypotterapp.databinding.FragmentGrifinoriaBinding
+import com.example.harraypotterapp.ui.home.InfoFragment
 import com.example.harraypotterapp.ui.viewModel.MainViewModel
 import com.example.harraypotterapp.utils.Helpers
 
 class GrifinoriaFragment : Fragment() {
     private val viewModel: MainViewModel by activityViewModels { Helpers.getMainViewModelFactory() }
     private lateinit var adapter: AdapterGrifinoriaMembres
-    //private var _binding: FragmentGalleryBinding? = null
     private var _binding: FragmentGrifinoriaBinding?= null
     private val binding get() = _binding!!
 
@@ -31,11 +31,6 @@ class GrifinoriaFragment : Fragment() {
         val root: View = binding.root
 
         setupAdapter()
-
-       /* adapter.onClickListener = { pokemonId ->
-            viewModel.setPokemon(pokemonId)
-            replaceFragment(InfoFragment())
-        }*/
 
         return root
     }
@@ -118,10 +113,19 @@ class GrifinoriaFragment : Fragment() {
         adapter.submitList(tempList)
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        adapter.onClickListener = { personagemId ->
+            viewModel.setPersonagens(personagemId)
+            replaceFragment(InfoFragment())
+        }
+    }
+
     private fun replaceFragment(fragment: Fragment) {
         val fragmentManager = activity?.supportFragmentManager
         val fragmentTransaction = fragmentManager?.beginTransaction()
-        fragmentTransaction?.replace(R.id.nav_fragment, fragment)
+        fragmentTransaction?.replace(R.id.nav_host_fragment_content_main, fragment)
         fragmentTransaction?.addToBackStack(null)
         fragmentTransaction?.commit()
     }

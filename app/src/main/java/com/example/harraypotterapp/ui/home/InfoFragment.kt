@@ -57,11 +57,12 @@ class InfoFragment : Fragment() {
             oficio(personagem)
             findHouse(personagem)
             setImage(personagem)
-            binding.tvDataNascimento.text = personagem.dateOfBirth
-            binding.tvGenero.text = personagem.gender
+            genero(personagem)
+            dataNascimento(personagem)
+
 
             binding.btnAddFavorite.setOnClickListener {
-                Log.d("Coin", "getData: $personagem")
+                Log.d("Personagem:", "getData: $personagem")
                 when (personagem.isFavorite) {
                     true -> { // Vai remover dos favoritos
                         sharedPref.edit().remove(personagem.name).apply()
@@ -80,13 +81,49 @@ class InfoFragment : Fragment() {
         }
     }
 
+    private fun dataNascimento(x: PersonagensItem){
+        if(x.dateOfBirth!= ""){
+            binding.tvDataNascimento.text = x.dateOfBirth
+        }else{
+            binding.tvDataNascimento.text = "Não informado"
+        }
+    }
+
+    private fun genero(x: PersonagensItem){
+        if(x.gender == "male"){
+            binding.tvGenero.text = x.gender
+            Glide.with(binding.root.context)
+                .load(R.drawable.iconmasculino)
+                .into(binding.iconGenero)
+        }else if (x.gender == "female"){
+            binding.tvGenero.text = x.gender
+            Glide.with(binding.root.context)
+                .load(R.drawable.iconfeminino)
+                .into(binding.iconGenero)
+        }else{
+            binding.tvGenero.text = "Não informado"
+            Glide.with(binding.root.context)
+                .load(R.drawable.notfoundicon)
+                .into(binding.iconGenero)
+        }
+    }
+
     private fun oficio(x: PersonagensItem) {
         if (x.hogwartsStudent == true) {
             binding.tvOficio.text = "Estudante em Hogwarts"
+            Glide.with(binding.root.context)
+                .load(R.drawable.studanticon)
+                .into(binding.iconOficio)
         } else if (x.hogwartsStaff == true) {
             binding.tvOficio.text = "Funcionário em Hogwarts"
+            Glide.with(binding.root.context)
+                .load(R.drawable.iconwork)
+                .into(binding.iconOficio)
         } else {
-            binding.tvOficio.text = "Não informado"
+            binding.tvOficio.text = "Ofício Não informado"
+            Glide.with(binding.root.context)
+                .load(R.drawable.notfoundicon)
+                .into(binding.iconOficio)
         }
     }
 
