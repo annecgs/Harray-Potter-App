@@ -12,6 +12,7 @@ import com.example.harraypotterapp.R
 import com.example.harraypotterapp.data.remote.dto.PersonagemApiResult
 import com.example.harraypotterapp.data.remote.dto.PersonagensItem
 import com.example.harraypotterapp.databinding.FragmentFavoritesBinding
+import com.example.harraypotterapp.ui.error.ErrorFragment
 import com.example.harraypotterapp.ui.home.InfoFragment
 import com.example.harraypotterapp.ui.viewModel.MainViewModel
 import com.example.harraypotterapp.utils.Helpers
@@ -21,6 +22,7 @@ class FavoritesFragment : Fragment() {
     private lateinit var adapter: AdapterFavoritos
     private var _binding: FragmentFavoritesBinding? = null
     private val binding get() = _binding!!
+    private lateinit var errorFragment: ErrorFragment
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -108,8 +110,8 @@ class FavoritesFragment : Fragment() {
             }
 
             is PersonagemApiResult.Error -> {
-                // errorFragment = ErrorFragment()
-                // replaceFragment(ErrorFragment())
+                errorFragment = ErrorFragment()
+                replaceFragment(ErrorFragment())
             }
         }
 

@@ -15,6 +15,7 @@ import com.example.harraypotterapp.R
 import com.example.harraypotterapp.data.remote.dto.PersonagemApiResult
 import com.example.harraypotterapp.data.remote.dto.PersonagensItem
 import com.example.harraypotterapp.databinding.FragmentHomeBinding
+import com.example.harraypotterapp.ui.error.ErrorFragment
 import com.example.harraypotterapp.ui.viewModel.MainViewModel
 import com.example.harraypotterapp.utils.Helpers
 
@@ -23,6 +24,7 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private lateinit var adapterHome: AdapterHome
+    private lateinit var errorFragment: ErrorFragment
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -104,8 +106,8 @@ class HomeFragment : Fragment() {
                 }
                 is PersonagemApiResult.Error<*> -> {
                     binding.progressBar.visibility = View.GONE
-                    // errorFragment = ErrorFragment()
-                    // replaceFragment(ErrorFragment())
+                    errorFragment = ErrorFragment()
+                    replaceFragment(ErrorFragment())
                     viewModel.mensagem = listPersonagem.throwable.message.toString()
                     Log.d("INFO", "Error.cause: ${listPersonagem.throwable.cause}")
                     Log.d("INFO", "Error: $listPersonagem")

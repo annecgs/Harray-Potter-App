@@ -11,6 +11,7 @@ import com.example.harraypotterapp.R
 import com.example.harraypotterapp.data.remote.dto.PersonagemApiResult
 import com.example.harraypotterapp.data.remote.dto.PersonagensItem
 import com.example.harraypotterapp.databinding.FragmentGrifinoriaBinding
+import com.example.harraypotterapp.ui.error.ErrorFragment
 import com.example.harraypotterapp.ui.home.InfoFragment
 import com.example.harraypotterapp.ui.viewModel.MainViewModel
 import com.example.harraypotterapp.utils.Helpers
@@ -20,6 +21,7 @@ class GrifinoriaFragment : Fragment() {
     private lateinit var adapter: AdapterGrifinoriaMembres
     private var _binding: FragmentGrifinoriaBinding?= null
     private val binding get() = _binding!!
+    private lateinit var errorFragment: ErrorFragment
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -98,8 +100,8 @@ class GrifinoriaFragment : Fragment() {
             }
 
             is PersonagemApiResult.Error -> {
-                // errorFragment = ErrorFragment()
-                // replaceFragment(ErrorFragment())
+                errorFragment = ErrorFragment()
+                replaceFragment(ErrorFragment())
             }
         }
 

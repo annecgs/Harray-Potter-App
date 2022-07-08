@@ -11,6 +11,7 @@ import com.example.harraypotterapp.R
 import com.example.harraypotterapp.data.remote.dto.PersonagemApiResult
 import com.example.harraypotterapp.data.remote.dto.PersonagensItem
 import com.example.harraypotterapp.databinding.FragmentLufaLufaBinding
+import com.example.harraypotterapp.ui.error.ErrorFragment
 import com.example.harraypotterapp.ui.home.InfoFragment
 import com.example.harraypotterapp.ui.viewModel.MainViewModel
 import com.example.harraypotterapp.utils.Helpers
@@ -20,6 +21,7 @@ class LufaLufaFragment : Fragment() {
     private lateinit var adapter: AdapterLufaLufa
     private var _binding: FragmentLufaLufaBinding? = null
     private val binding get() = _binding!!
+    private lateinit var errorFragment: ErrorFragment
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -97,8 +99,8 @@ class LufaLufaFragment : Fragment() {
             }
 
             is PersonagemApiResult.Error -> {
-                // errorFragment = ErrorFragment()
-                // replaceFragment(ErrorFragment())
+                errorFragment = ErrorFragment()
+                replaceFragment(ErrorFragment())
             }
         }
 

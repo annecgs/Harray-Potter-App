@@ -22,7 +22,8 @@
     <string name="patronus">Patrono do membro da casa</string>
     <string name="ancestry">Ancestral do membro da casa</string>
     <string name="menu_favoritos">Favoritos</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="try_again">Algo de errado aconteceu, por favor tente novamente</string>
+    <string name="try_again_click">Click aqui para tentar novamente</string>
+    <string name="mensagem_de_erro">Mensagem de erro</string>
 
 </resources>
