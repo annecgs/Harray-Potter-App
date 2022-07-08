@@ -64,9 +64,9 @@ favorito)</li>
 <img src="https://user-images.githubusercontent.com/103140224/178031727-8e578263-9764-4d85-a03c-71164fb43d35.png" width="220px" height="350px"/>
 <img src="https://user-images.githubusercontent.com/103140224/178031771-05b384c0-7145-4447-9fb5-d5beeea73df8.png" width="220px" height="350px"/>
 <img src="https://user-images.githubusercontent.com/103140224/178031702-50d1faaf-0ddc-4008-bada-9c622cf8a0ab.png" width="220px" height="350px"/>
+<img src="https://user-images.githubusercontent.com/103140224/178034320-2389fb60-cc05-409e-98d2-8f642317071d.png" width="220px" height="350px"/>
 <img src="https://user-images.githubusercontent.com/103140224/178031746-8d1fc3d4-9513-4570-b7f6-a31a55f6d0d5.png" width="220px" height="350px"/>
 <img src="https://user-images.githubusercontent.com/103140224/178013707-beaf4fc9-276e-4c23-863c-146f56e1cf2f.png" width="220px" height="350px"/>
-  
 </p>
 
 <h2>Direitos autorais da imagens utilizadas no app</h2>
@@ -79,6 +79,7 @@ favorito)</li>
 <a href="https://storyset.com/illustration/404-error-with-a-cute-animal/cuate"><li>Error 404: storyset.com</li></a>
 <a href="https://storyset.com/illustration/error-429/amico"><li>Error 429: storyset.com</li></a>
 <a href="https://storyset.com/illustration/500-internal-server-error/cuate#FF81AEFF&hide=&hide=complete"><li>Error 500: storyset.com</li></a>
+<a href="https://mauwebsite.vn/wp-content/uploads/2021/11/502-error.png"><li>Error 502: storyset.com</li></a>
 <a href="https://storyset.com/illustration/503-error-service-unavailable/cuate#BA68C8FF&hide=&hide=complete"><li>Error 503: storyset.com</li></a>
 <a href="https://storyset.com/illustration/504-error-gateway-timeout/rafiki"><li>Error 504: storyset.com</li></a>
 
