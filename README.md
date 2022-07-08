@@ -71,4 +71,5 @@ favorito)</li>
 <a href="https://www.pinclipart.com/pindetail/iJThxR_clipart-document-not-found-icon-png-download/"><li>Icon not found dados ficha cadastral: Clipart.com</li></a>
 <a href="https://storyset.com/illustration/400-error-bad-request/rafiki"><li>Error 400: storyset.com</li></a>
 <a href="https://storyset.com/illustration/401-error-unauthorized/pana"><li> Error 401: storyset.com</li></a>
+<a href="https://storyset.com/illustration/503-error-service-unavailable/cuate#BA68C8FF&hide=&hide=complete"><li>Error 503: storyset.com"</li></a>
 
