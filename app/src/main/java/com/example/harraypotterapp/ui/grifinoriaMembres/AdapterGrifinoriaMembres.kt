@@ -27,7 +27,7 @@ class AdapterGrifinoriaMembres : ListAdapter<PersonagensItem, AdapterGrifinoriaM
             findFavorite(x)
             setImage(x)
 
-           binding.linearLayout2.setOnClickListener {
+            binding.linearLayout2.setOnClickListener {
                 onClickListener?.invoke(x.name)
             }
         }

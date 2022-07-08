@@ -81,6 +81,18 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView"
         tools:listitem="@layout/house_membrer" />
 
+    <ImageView
+        android:id="@+id/widgetListEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="44dp"
+        android:scaleType="fitStart"
+        android:src="@drawable/list_is_empty"
+        android:contentDescription="Imagem lista vazia"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/tv_noFavorites"
         android:layout_width="wrap_content"

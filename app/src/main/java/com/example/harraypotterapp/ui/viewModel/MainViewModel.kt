@@ -32,7 +32,6 @@ class MainViewModel(private val iHogwartsRepository: IHogwartsRepository) : View
             try {
                 if (personagemFromApi.isNullOrEmpty()) {
                     personagemFromApi = withContext(Dispatchers.IO) {
-                        // IpokemonsRepository.getPokedex()
                         iHogwartsRepository.getPersonagens()
                     }
                 }
@@ -51,7 +50,6 @@ class MainViewModel(private val iHogwartsRepository: IHogwartsRepository) : View
             try {
                 if (personagemFromApi.isNullOrEmpty()) {
                     personagemFromApi = withContext(Dispatchers.IO) {
-                        // IpokemonsRepository.getPokedex()
                         iHogwartsRepository.getPersonagens()
                     }
                 }

@@ -1,9 +1,9 @@
-package com.example.harraypotterapp.ui.splashScreen
+package com.example.harraypotterapp.ui.activity.splashScreen
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.harraypotterapp.MainActivity
+import com.example.harraypotterapp.ui.activity.MainActivity
 import com.example.harraypotterapp.R
 
 class SplashScreen : AppCompatActivity() {

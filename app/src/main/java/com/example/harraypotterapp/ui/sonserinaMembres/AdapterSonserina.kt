@@ -28,8 +28,8 @@ class AdapterSonserina : ListAdapter<PersonagensItem, AdapterSonserina.ViewHolde
             setImage(x)
 
             binding.linearLayout2.setOnClickListener {
-                 onClickListener?.invoke(x.name)
-             }
+                onClickListener?.invoke(x.name)
+            }
         }
 
         private fun findHouse(x: PersonagensItem) {

@@ -19,7 +19,7 @@ import com.example.harraypotterapp.utils.Helpers
 class GrifinoriaFragment : Fragment() {
     private val viewModel: MainViewModel by activityViewModels { Helpers.getMainViewModelFactory() }
     private lateinit var adapter: AdapterGrifinoriaMembres
-    private var _binding: FragmentGrifinoriaBinding?= null
+    private var _binding: FragmentGrifinoriaBinding? = null
     private val binding get() = _binding!!
     private lateinit var errorFragment: ErrorFragment
 
@@ -96,12 +96,22 @@ class GrifinoriaFragment : Fragment() {
                         tempList.add(it)
                     }
                 }
+                if (tempList.isNotEmpty()) {
+                    binding.tvNoFavorites.visibility = View.GONE
+                    binding.widgetListEmpty.visibility = View.GONE
+                }
                 setupSearchView(tempList as List<PersonagensItem>)
             }
 
             is PersonagemApiResult.Error -> {
                 errorFragment = ErrorFragment()
                 replaceFragment(ErrorFragment())
+                binding.rvGrifinoriaMembres.visibility = View.GONE
+                binding.includeHeader.imageView2.visibility = View.GONE
+                binding.serchView.visibility = View.GONE
+                binding.includeDivider.root.visibility = View.GONE
+                binding.tvNoFavorites.visibility = View.GONE
+                binding.widgetListEmpty.visibility = View.GONE
             }
         }
 

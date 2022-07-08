@@ -34,11 +34,6 @@ class FavoritesFragment : Fragment() {
 
         setupAdapter()
 
-       /* adapter.onClickListener = { pokemonId ->
-            viewModel.setPokemon(pokemonId)
-            replaceFragment(InfoFragment())
-        }*/
-
         return root
     }
 
@@ -56,7 +51,7 @@ class FavoritesFragment : Fragment() {
         }
     }
 
-   private fun setupSearchView(list: List<PersonagensItem>) {
+    private fun setupSearchView(list: List<PersonagensItem>) {
         var newList: MutableList<PersonagensItem> = ArrayList()
         binding.serchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -77,15 +72,13 @@ class FavoritesFragment : Fragment() {
     private fun setlistQueryAdapter(newList: MutableList<PersonagensItem>) {
         if (newList.isNotEmpty()) {
             setListAdapter(newList)
-           // binding.widgetListEmpty.visibility = View.GONE
+            binding.widgetListEmpty.visibility = View.GONE
             binding.recyclerViewFavorites.visibility = View.VISIBLE
             binding.includeDivider.root.visibility = View.VISIBLE
-            // binding.progressBar.visibility = View.GONE
         } else {
             binding.recyclerViewFavorites.visibility = View.GONE
             binding.includeDivider.root.visibility = View.GONE
-           // binding.widgetListEmpty.visibility = View.VISIBLE
-            // binding.progressBar.visibility = View.GONE
+            binding.widgetListEmpty.visibility = View.VISIBLE
         }
     }
 
@@ -106,12 +99,22 @@ class FavoritesFragment : Fragment() {
                         tempList.add(it)
                     }
                 }
+                if (tempList.isNotEmpty()) {
+                    binding.tvNoFavorites.visibility = View.GONE
+                    binding.widgetListEmpty.visibility = View.GONE
+                }
                 setupSearchView(tempList as List<PersonagensItem>)
             }
 
             is PersonagemApiResult.Error -> {
                 errorFragment = ErrorFragment()
                 replaceFragment(ErrorFragment())
+                binding.recyclerViewFavorites.visibility = View.GONE
+                binding.includeHeader.imageView2.visibility = View.GONE
+                binding.serchView.visibility = View.GONE
+                binding.includeDivider.root.visibility = View.GONE
+                binding.tvNoFavorites.visibility = View.GONE
+                binding.widgetListEmpty.visibility = View.GONE
             }
         }
 

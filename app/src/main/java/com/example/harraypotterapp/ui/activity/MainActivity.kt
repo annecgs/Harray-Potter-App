@@ -1,4 +1,4 @@
-package com.example.harraypotterapp
+package com.example.harraypotterapp.ui.activity
 
 import android.graphics.Color
 import android.os.Build
@@ -13,6 +13,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.harraypotterapp.R
 import com.example.harraypotterapp.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
 

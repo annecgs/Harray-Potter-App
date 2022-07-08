@@ -11,6 +11,7 @@ import com.example.harraypotterapp.R
 import com.example.harraypotterapp.data.remote.dto.PersonagemApiResult
 import com.example.harraypotterapp.data.remote.dto.PersonagensItem
 import com.example.harraypotterapp.databinding.FragmentCorvinalBinding
+import com.example.harraypotterapp.ui.error.ErrorFragment
 import com.example.harraypotterapp.ui.home.InfoFragment
 import com.example.harraypotterapp.ui.viewModel.MainViewModel
 import com.example.harraypotterapp.utils.Helpers
@@ -20,6 +21,7 @@ class CorvinalFragment : Fragment() {
     private lateinit var adapter: AdapterCorvinalMembres
     private var _binding: FragmentCorvinalBinding? = null
     private val binding get() = _binding!!
+    private lateinit var errorFragment: ErrorFragment
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -94,12 +96,22 @@ class CorvinalFragment : Fragment() {
                         tempList.add(it)
                     }
                 }
+                if (tempList.isNotEmpty()) {
+                    binding.tvNoFavorites.visibility = View.GONE
+                    binding.widgetListEmpty.visibility = View.GONE
+                }
                 setupSearchView(tempList as List<PersonagensItem>)
             }
 
             is PersonagemApiResult.Error -> {
-                // errorFragment = ErrorFragment()
-                // replaceFragment(ErrorFragment())
+                errorFragment = ErrorFragment()
+                replaceFragment(ErrorFragment())
+                binding.rvCorvinalMembres.visibility = View.GONE
+                binding.includeHeader.imageView2.visibility = View.GONE
+                binding.serchView.visibility = View.GONE
+                binding.includeDivider.root.visibility = View.GONE
+                binding.tvNoFavorites.visibility = View.GONE
+                binding.widgetListEmpty.visibility = View.GONE
             }
         }
 

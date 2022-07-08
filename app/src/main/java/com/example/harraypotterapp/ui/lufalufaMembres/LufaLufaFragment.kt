@@ -95,12 +95,22 @@ class LufaLufaFragment : Fragment() {
                         tempList.add(it)
                     }
                 }
+                if (tempList.isNotEmpty()) {
+                    binding.tvNoFavorites.visibility = View.GONE
+                    binding.widgetListEmpty.visibility = View.GONE
+                }
                 setupSearchView(tempList as List<PersonagensItem>)
             }
 
             is PersonagemApiResult.Error -> {
                 errorFragment = ErrorFragment()
                 replaceFragment(ErrorFragment())
+                binding.rvLufalufaMembres.visibility = View.GONE
+                binding.includeHeader.imageView2.visibility = View.GONE
+                binding.serchView.visibility = View.GONE
+                binding.includeDivider.root.visibility = View.GONE
+                binding.tvNoFavorites.visibility = View.GONE
+                binding.widgetListEmpty.visibility = View.GONE
             }
         }
 
@@ -118,6 +128,7 @@ class LufaLufaFragment : Fragment() {
         adapter.onClickListener = { personagemId ->
             viewModel.setPersonagens(personagemId)
             replaceFragment(InfoFragment())
+
         }
     }
 
