@@ -42,7 +42,7 @@ favorito)</li>
 <img src="https://user-images.githubusercontent.com/103140224/178005064-344fd186-fa16-47e9-86c4-255b0bb9b71e.png" width="220px" height="350px"/>
 <img src="https://user-images.githubusercontent.com/103140224/178005073-f0f6e3f2-56e9-4aca-a05b-ff138e1cecaa.png" width="220px" height="350px"/>
 <img src="https://user-images.githubusercontent.com/103140224/178005078-e6d77685-f32d-4fb8-9f3b-e02696dcf873.png" width="220px" height="350px"/>
-<img src="(https://user-images.githubusercontent.com/103140224/178005080-69470ebc-df7e-4cdd-85c7-e03918594654.png" width="220px" height="350px"/>
+<img src="https://user-images.githubusercontent.com/103140224/178005080-69470ebc-df7e-4cdd-85c7-e03918594654.png" width="220px" height="350px"/>
 </p>
 
 <h2>Aplicação da acessibilidade</h2>
