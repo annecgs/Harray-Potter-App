@@ -56,6 +56,15 @@ favorito)</li>
 <li>mockk</li>
 <li>core:core-testing</li>
 
+<h2>Demonstrativo tela de erro</h2>
+<p float="left">
+<img src="https://user-images.githubusercontent.com/103140224/178013725-4d78bc4c-bb2a-4535-b562-e86c5d275404.png" width="220px" height="350px"/>
+<img src="https://user-images.githubusercontent.com/103140224/178013720-8d1db6d4-e81d-45c1-a1ad-d6a7f3db76bc.png" width="220px" height="350px"/>
+<img src="https://user-images.githubusercontent.com/103140224/178013715-b29293f1-cb1d-4a05-a9bb-596770a0d6e4.png" width="220px" height="350px"/>
+<img src="https://user-images.githubusercontent.com/103140224/178013697-553f0eba-5242-4c4d-bd1f-c37c50719bd1.png" width="220px" height="350px"/>
+<img src="https://user-images.githubusercontent.com/103140224/178013707-beaf4fc9-276e-4c23-863c-146f56e1cf2f.png" width="220px" height="350px"/>
+</p>
+
 <h2>Direitos autorais da imagens utilizadas no app</h2>
 <a href="https://br.pinterest.com/pin/8585055527636654/"><li>Imagem utilizada no Splash Screen: Maraisa Souza (Pinterest)</li></a>
 <a href="https://br.pinterest.com/pin/6755468181965453/"><li>Icons utilizados nas casas (grifinória, lufa lufa, corvinal e sonserina): deviantart.com</li></a>
