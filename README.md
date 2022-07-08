@@ -11,12 +11,12 @@
 <li>Moshi para atividades de serialização de objetos</li>
 <li>Glide para carregar as imagens</li>
 <li>Aplicação de fragments para reaproveitamento dos objetos visuais</li>
-<li>Tratativa dos erros de API (a fazer!)</li>
+<li>Tratativa dos erros de API</li>
 <li>Arquitetura MVVM</li>
 <li>Boas práticas com aplicação do Ktlint</li>
 <li>Acessibilidade, utilizar https://developer.android.com/guide/topics/ui/accessibility/principles para
 referência ou https://guia-wcag.com/ ;
-<li>Suporte versão do Android 12 (a fazer!);</li>
+<li>Suporte versão do Android 12;</li>
 <li>Modularização (a fazer!);</li>
 <li>Testes unitários em JUnit (a fazer!);</li>
 
