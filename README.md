@@ -11,12 +11,12 @@
 <li>Moshi para atividades de serialização de objetos</li>
 <li>Glide para carregar as imagens</li>
 <li>Aplicação de fragments para reaproveitamento dos objetos visuais</li>
-<li>Tratativa dos erros de API (a fazer!)</li>
+<li>Tratativa dos erros de API</li>
 <li>Arquitetura MVVM</li>
 <li>Boas práticas com aplicação do Ktlint</li>
 <li>Acessibilidade, utilizar https://developer.android.com/guide/topics/ui/accessibility/principles para
 referência ou https://guia-wcag.com/ ;
-<li>Suporte versão do Android 12 (a fazer!);</li>
+<li>Suporte versão do Android 12;</li>
 <li>Modularização (a fazer!);</li>
 <li>Testes unitários em JUnit (a fazer!);</li>
 
@@ -38,12 +38,12 @@ favorito)</li>
 <img src="https://user-images.githubusercontent.com/103140224/177796681-79c63daf-64ff-4e38-a263-0f226f504c5f.png" width="220px" height="350px"/>
 <img src="https://user-images.githubusercontent.com/103140224/177796964-db9c52d8-8d6f-4f1c-ac27-e208aba42f76.png" width="220px" height="350px"/>
 <img src="https://user-images.githubusercontent.com/103140224/177797000-f8c0c0ef-f7b3-4784-845f-3e4fd77f1bc8.png" width="220px" height="350px"/>
-<img src="https://user-images.githubusercontent.com/103140224/177798276-a4a2ff7b-5ccf-4595-80b9-8929c9867e18.png" width="220px" height="350px"/>
-<img src="https://user-images.githubusercontent.com/103140224/177798306-5fba8cf7-527c-420e-9d33-9c5a599d66d0.png" width="220px" height="350px"/>
-<img src="https://user-images.githubusercontent.com/103140224/177798331-e76d8786-9ad5-40f3-b156-ea9432427705.png" width="220px" height="350px"/>
-<img src="https://user-images.githubusercontent.com/103140224/177798245-a3a2e420-f461-4452-8a8e-cef8da575f20.png" width="220px" height="350px"/>
+<img src="https://user-images.githubusercontent.com/103140224/178005055-fb888d52-558c-4cb5-98f1-7e96e5307b62.png" width="220px" height="350px"/>
+<img src="https://user-images.githubusercontent.com/103140224/178005064-344fd186-fa16-47e9-86c4-255b0bb9b71e.png" width="220px" height="350px"/>
+<img src="https://user-images.githubusercontent.com/103140224/178005073-f0f6e3f2-56e9-4aca-a05b-ff138e1cecaa.png" width="220px" height="350px"/>
+<img src="https://user-images.githubusercontent.com/103140224/178005078-e6d77685-f32d-4fb8-9f3b-e02696dcf873.png" width="220px" height="350px"/>
+<img src="https://user-images.githubusercontent.com/103140224/178005080-69470ebc-df7e-4cdd-85c7-e03918594654.png" width="220px" height="350px"/>
 </p>
-
 
 <h2>Aplicação da acessibilidade</h2>
 <li>Adição de etiquetas com contentDescription</li>
