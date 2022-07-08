@@ -67,6 +67,8 @@ favorito)</li>
 <img src="https://user-images.githubusercontent.com/103140224/178034320-2389fb60-cc05-409e-98d2-8f642317071d.png" width="220px" height="350px"/>
 <img src="https://user-images.githubusercontent.com/103140224/178031746-8d1fc3d4-9513-4570-b7f6-a31a55f6d0d5.png" width="220px" height="350px"/>
 <img src="https://user-images.githubusercontent.com/103140224/178013707-beaf4fc9-276e-4c23-863c-146f56e1cf2f.png" width="220px" height="350px"/>
+<img src="https://user-images.githubusercontent.com/103140224/178042718-0f7b4995-e1fd-4b2f-865e-347cb3ff839c.png" width="220px" height="350px"/>
+
 </p>
 
 <h2>Direitos autorais da imagens utilizadas no app</h2>
@@ -82,5 +84,6 @@ favorito)</li>
 <a href="https://mauwebsite.vn/wp-content/uploads/2021/11/502-error.png"><li>Error 502: storyset.com</li></a>
 <a href="https://storyset.com/illustration/503-error-service-unavailable/cuate#BA68C8FF&hide=&hide=complete"><li>Error 503: storyset.com</li></a>
 <a href="https://storyset.com/illustration/504-error-gateway-timeout/rafiki"><li>Error 504: storyset.com</li></a>
+<a href="https://pin.it/130DXYd"><li>Error 505: Freepik (a imagem foi adaptada para o error 505)</li></a>
 
 
