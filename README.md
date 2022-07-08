@@ -61,8 +61,12 @@ favorito)</li>
 <img src="https://user-images.githubusercontent.com/103140224/178013725-4d78bc4c-bb2a-4535-b562-e86c5d275404.png" width="220px" height="350px"/>
 <img src="https://user-images.githubusercontent.com/103140224/178013720-8d1db6d4-e81d-45c1-a1ad-d6a7f3db76bc.png" width="220px" height="350px"/>
 <img src="https://user-images.githubusercontent.com/103140224/178013715-b29293f1-cb1d-4a05-a9bb-596770a0d6e4.png" width="220px" height="350px"/>
-<img src="https://user-images.githubusercontent.com/103140224/178013697-553f0eba-5242-4c4d-bd1f-c37c50719bd1.png" width="220px" height="350px"/>
+<img src="https://user-images.githubusercontent.com/103140224/178031727-8e578263-9764-4d85-a03c-71164fb43d35.png" width="220px" height="350px"/>
+<img src="https://user-images.githubusercontent.com/103140224/178031771-05b384c0-7145-4447-9fb5-d5beeea73df8.png" width="220px" height="350px"/>
+<img src="https://user-images.githubusercontent.com/103140224/178031702-50d1faaf-0ddc-4008-bada-9c622cf8a0ab.png" width="220px" height="350px"/>
+<img src="https://user-images.githubusercontent.com/103140224/178031746-8d1fc3d4-9513-4570-b7f6-a31a55f6d0d5.png" width="220px" height="350px"/>
 <img src="https://user-images.githubusercontent.com/103140224/178013707-beaf4fc9-276e-4c23-863c-146f56e1cf2f.png" width="220px" height="350px"/>
+  
 </p>
 
 <h2>Direitos autorais da imagens utilizadas no app</h2>
@@ -72,10 +76,10 @@ favorito)</li>
 <a href="https://storyset.com/illustration/400-error-bad-request/rafiki"><li>Error 400: storyset.com</li></a>
 <a href="https://storyset.com/illustration/401-error-unauthorized/pana"><li> Error 401: storyset.com</li></a>
 <a href="https://storyset.com/illustration/403-error-forbidden/rafiki"><li> Error 403: storyset.com</li></a>
-<a href="https://storyset.com/illustration/404-error-with-a-cute-animal/cuate">Error 404: storyset.com</li></a>
+<a href="https://storyset.com/illustration/404-error-with-a-cute-animal/cuate"><li>Error 404: storyset.com</li></a>
 <a href="https://storyset.com/illustration/error-429/amico"><li>Error 429: storyset.com</li></a>
-<a href="https://storyset.com/illustration/500-internal-server-error/cuate#FF81AEFF&hide=&hide=complete"><li>>Error 500: storyset.com</li></a>
+<a href="https://storyset.com/illustration/500-internal-server-error/cuate#FF81AEFF&hide=&hide=complete"><li>Error 500: storyset.com</li></a>
 <a href="https://storyset.com/illustration/503-error-service-unavailable/cuate#BA68C8FF&hide=&hide=complete"><li>Error 503: storyset.com</li></a>
-<a href="https://storyset.com/illustration/504-error-gateway-timeout/rafiki"><li>Error 503: storyset.com</li></a>
+<a href="https://storyset.com/illustration/504-error-gateway-timeout/rafiki"><li>Error 504: storyset.com</li></a>
 
 
