@@ -73,12 +73,10 @@ class CorvinalFragment : Fragment() {
             binding.widgetListEmpty.visibility = View.GONE
             binding.rvCorvinalMembres.visibility = View.VISIBLE
             binding.includeDivider.root.visibility = View.VISIBLE
-            // binding.progressBar.visibility = View.GONE
         } else {
             binding.rvCorvinalMembres.visibility = View.GONE
             binding.includeDivider.root.visibility = View.GONE
             binding.widgetListEmpty.visibility = View.VISIBLE
-            // binding.progressBar.visibility = View.GONE
         }
     }
 

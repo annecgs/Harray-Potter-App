@@ -59,19 +59,17 @@
         layout="@layout/divider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginBottom="4dp"
-        android:visibility="gone"
-        tools:visibility="visible"
-        android:background="#AAAAAA"
-        app:layout_constraintBottom_toTopOf="@+id/rv_grifinoriaMembres"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerViewFavorites"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cardView"
-        />
+        app:layout_constraintVertical_bias="0.424" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_favoritos"
+        android:id="@+id/recyclerViewFavorites"
         android:layout_width="400dp"
         android:layout_height="404dp"
         android:layout_marginTop="48dp"
@@ -83,53 +81,6 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView"
         tools:listitem="@layout/house_membrer" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:visibility="gone"
-        android:clickable="true"
-        android:src="@drawable/ic_baseline_keyboard_arrow_up_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/widgetListEmpty"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:backgroundTint="@android:color/transparent"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="44dp"
-            android:scaleType="fitStart"
-            android:src="@drawable/list_is_empty"
-            android:contentDescription="Imagem lista vazia"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/bg_button"
-            android:backgroundTint="#CC9EA96D"
-            android:padding="12dp"
-            android:text="Pessoa não encontrada ;("
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
     <TextView
         android:id="@+id/tv_noFavorites"
         android:layout_width="wrap_content"
@@ -139,11 +90,10 @@
         android:padding="12dp"
         android:text="Você não tem favoritos ;("
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/rv_favoritos"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerViewFavorites"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/includeDivider"
-        tools:visibility="visible"
-        tools:ignore="NotSibling" />
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

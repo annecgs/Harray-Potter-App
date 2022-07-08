@@ -73,12 +73,10 @@ class SonserinaFragment : Fragment() {
             binding.widgetListEmpty.visibility = View.GONE
             binding.rvSonserinaMembres.visibility = View.VISIBLE
             binding.includeDivider.root.visibility = View.VISIBLE
-            // binding.progressBar.visibility = View.GONE
         } else {
             binding.rvSonserinaMembres.visibility = View.GONE
             binding.includeDivider.root.visibility = View.GONE
             binding.widgetListEmpty.visibility = View.VISIBLE
-            // binding.progressBar.visibility = View.GONE
         }
     }
 
