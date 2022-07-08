@@ -63,6 +63,7 @@ favorito)</li>
 <img src="https://user-images.githubusercontent.com/103140224/178013715-b29293f1-cb1d-4a05-a9bb-596770a0d6e4.png" width="220px" height="350px"/>
 <img src="https://user-images.githubusercontent.com/103140224/178031727-8e578263-9764-4d85-a03c-71164fb43d35.png" width="220px" height="350px"/>
 <img src="https://user-images.githubusercontent.com/103140224/178031771-05b384c0-7145-4447-9fb5-d5beeea73df8.png" width="220px" height="350px"/>
+<img src="https://user-images.githubusercontent.com/103140224/178046064-653206e1-4e2e-47cb-a534-bfa542c8577c.png" width="220px" height="350px"/>
 <img src="https://user-images.githubusercontent.com/103140224/178031702-50d1faaf-0ddc-4008-bada-9c622cf8a0ab.png" width="220px" height="350px"/>
 <img src="https://user-images.githubusercontent.com/103140224/178034320-2389fb60-cc05-409e-98d2-8f642317071d.png" width="220px" height="350px"/>
 <img src="https://user-images.githubusercontent.com/103140224/178031746-8d1fc3d4-9513-4570-b7f6-a31a55f6d0d5.png" width="220px" height="350px"/>
@@ -79,6 +80,7 @@ favorito)</li>
 <a href="https://storyset.com/illustration/401-error-unauthorized/pana"><li> Error 401: storyset.com</li></a>
 <a href="https://storyset.com/illustration/403-error-forbidden/rafiki"><li> Error 403: storyset.com</li></a>
 <a href="https://storyset.com/illustration/404-error-with-a-cute-animal/cuate"><li>Error 404: storyset.com</li></a>
+<a href="https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/silly-astronaut-cat-404-error-delf-design.jpg"><li>Error 410: images.fineartamerica.com (imagem adaptada para o error 410</li></a>
 <a href="https://storyset.com/illustration/error-429/amico"><li>Error 429: storyset.com</li></a>
 <a href="https://storyset.com/illustration/500-internal-server-error/cuate#FF81AEFF&hide=&hide=complete"><li>Error 500: storyset.com</li></a>
 <a href="https://mauwebsite.vn/wp-content/uploads/2021/11/502-error.png"><li>Error 502: storyset.com</li></a>
