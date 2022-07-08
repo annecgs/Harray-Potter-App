@@ -1,7 +1,11 @@
 package com.example.harraypotterapp
 
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.view.Menu
+import android.view.View
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
@@ -25,13 +29,28 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
+        if (Build.VERSION.SDK_INT >= 19 && Build.VERSION.SDK_INT < 21) {
+            setWindowFlag(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, true)
+        }
+        if (Build.VERSION.SDK_INT >= 19) {
+            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+        }
+        if (Build.VERSION.SDK_INT >= 21) {
+            setWindowFlag(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, false)
+            window.statusBarColor = Color.TRANSPARENT
+        }
+
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_lufalufa, R.id.nav_sonserina
+                R.id.nav_home,
+                R.id.nav_gallery,
+                R.id.nav_slideshow,
+                R.id.nav_lufalufa,
+                R.id.nav_sonserina
             ),
             drawerLayout
         )
@@ -50,46 +69,6 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-    /*private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
-    private val binding2 by lazy { AppBarMainBinding.inflate(layoutInflater) }
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(binding.root)
-
-        if (Build.VERSION.SDK_INT >= 19 && Build.VERSION.SDK_INT < 21) {
-            setWindowFlag(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, true)
-        }
-        if (Build.VERSION.SDK_INT >= 19) {
-            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-        }
-        if (Build.VERSION.SDK_INT >= 21) {
-            setWindowFlag(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, false)
-            window.statusBarColor = Color.TRANSPARENT
-        }
-
-        if (savedInstanceState == null) {
-            replaceFragment(HomeFragment())
-        }
-
-        // NavigationBarView(https://m3.material.io/components/navigation-bar/implementation/android) é mais indicada para essa funcionalidade,
-        // Mas como o intuito do projeto é deixar o mais fiel possivel ao desafio proposto
-        // a BottomNavigationView será usada *****POR ENQUANTO******
-        // TODO implementar NavigationBar em forma de BottonNavigationView
-        binding.navView.setNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_home -> {
-                    replaceFragment(HomeFragment())
-                    true
-                }
-                R.id.nav_gallery -> {
-                    replaceFragment(GalleryFragment())
-                    true
-                }
-                else -> false
-            }
-        }
-    }
-
     private fun setWindowFlag(bits: Int, on: Boolean) {
         val win = window
         val winParams = win.attributes
@@ -100,11 +79,4 @@ class MainActivity : AppCompatActivity() {
         }
         win.attributes = winParams
     }
-
-    private fun replaceFragment(fragment: Fragment) {
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(binding2.navFragment.id, fragment)
-        fragmentTransaction.commit()
-    }*/
 }
