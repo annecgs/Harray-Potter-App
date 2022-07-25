@@ -88,4 +88,12 @@ favorito)</li>
 <a href="https://storyset.com/illustration/504-error-gateway-timeout/rafiki"><li>Error 504: storyset.com</li></a>
 <a href="https://pin.it/130DXYd"><li>Error 505: Freepik (a imagem foi adaptada para o error 505)</li></a>
 
+<h2>Demonstrativo de tela para membro não localizado e lista de favoritos vazia</h2>
+<p float="left">
+<img src="https://user-images.githubusercontent.com/103140224/180860733-77eb1374-a554-4bbf-bce9-4d3c1fc5637b.png" width="220px" height="350px"/>
+<img src="https://user-images.githubusercontent.com/103140224/180860746-c0d256a5-5fa9-4d56-947e-3139584e680d.png" width="220px" height="350px"/>
+<img src="https://user-images.githubusercontent.com/103140224/180860752-487aeb57-e958-45c7-b0ab-0ac1e1c808ba.png" width="220px" height="350px"/>
+<img src="https://user-images.githubusercontent.com/103140224/180860764-5c8fe45a-cd22-4a7b-b424-9f6940d5f3e3.png" width="220px" height="350px"/>
+</p>
+
 
