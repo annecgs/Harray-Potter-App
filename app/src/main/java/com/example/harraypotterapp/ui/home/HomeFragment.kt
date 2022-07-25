@@ -79,6 +79,7 @@ class HomeFragment : Fragment() {
             binding.includeDivider.root.visibility = View.GONE
             binding.widgetListEmpty.visibility = View.VISIBLE
             binding.progressBar.visibility = View.GONE
+            binding.tvNoFavorites.visibility = View.VISIBLE
         }
     }
 

@@ -78,6 +78,7 @@ class GrifinoriaFragment : Fragment() {
         } else {
             binding.rvGrifinoriaMembres.visibility = View.GONE
             binding.includeDivider.root.visibility = View.GONE
+            binding.tvNoFavorites.visibility = View.VISIBLE
             binding.widgetListEmpty.visibility = View.VISIBLE
         }
     }

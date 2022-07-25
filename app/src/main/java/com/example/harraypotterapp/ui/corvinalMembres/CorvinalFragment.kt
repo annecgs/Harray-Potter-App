@@ -79,6 +79,7 @@ class CorvinalFragment : Fragment() {
             binding.rvCorvinalMembres.visibility = View.GONE
             binding.includeDivider.root.visibility = View.GONE
             binding.widgetListEmpty.visibility = View.VISIBLE
+            binding.tvNoFavorites.visibility = View.VISIBLE
         }
     }
 

@@ -83,30 +83,40 @@
 
     <ImageView
         android:id="@+id/widgetListEmpty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="284dp"
+        android:layout_height="269dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginBottom="105dp"
+        android:contentDescription="Imagem lista vazia"
         android:paddingHorizontal="44dp"
         android:scaleType="fitStart"
         android:src="@drawable/list_is_empty"
-        android:contentDescription="Imagem lista vazia"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/serchView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rvGrifinoriaMembres"
+        app:layout_constraintVertical_bias="0.55"
+        tools:ignore="NotSibling" />
 
     <TextView
         android:id="@+id/tv_noFavorites"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
         android:background="@drawable/bg_button"
         android:backgroundTint="#CC9EA96D"
         android:padding="12dp"
-        android:text="Esta casa não possui membros ;("
+        android:text="Membro não localizado ;("
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/rvGrifinoriaMembres"
+        app:layout_constraintBottom_toBottomOf="@+id/widgetListEmpty"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/includeDivider"
+        app:layout_constraintVertical_bias="0.877"
         tools:visibility="visible" />
+
 
 
 

@@ -117,8 +117,8 @@
 
            <ImageView
                android:id="@+id/iconOficio"
-               android:layout_width="56dp"
-               android:layout_height="56dp"
+               android:layout_width="46dp"
+               android:layout_height="46dp"
                android:src="@drawable/studanticon"/>
 
             <TextView
@@ -141,8 +141,8 @@
             android:orientation="horizontal">
 
            <ImageView
-               android:layout_width="56dp"
-               android:layout_height="56dp"
+               android:layout_width="46dp"
+               android:layout_height="46dp"
                android:src="@drawable/nascimentoicon"/>
 
             <TextView
@@ -165,8 +165,8 @@
 
            <ImageView
                android:id="@+id/iconGenero"
-               android:layout_width="56dp"
-               android:layout_height="56dp"
+               android:layout_width="46dp"
+               android:layout_height="46dp"
                android:src="@drawable/iconfeminino"/>
 
             <TextView
