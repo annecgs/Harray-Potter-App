@@ -106,8 +106,8 @@
 
         <ImageView
             android:id="@+id/widgetListEmptyImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="334dp"
+            android:layout_height="339dp"
             android:paddingHorizontal="44dp"
             android:scaleType="fitStart"
             android:src="@drawable/list_is_empty"
@@ -125,10 +125,13 @@
             android:backgroundTint="#CC9EA96D"
             android:padding="12dp"
             android:text="Membro não localizado ;("
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="@+id/widgetListEmptyImage"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.56"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/includeDivider"
+            app:layout_constraintVertical_bias="0.877"
+            tools:ignore="NotSibling" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ProgressBar
