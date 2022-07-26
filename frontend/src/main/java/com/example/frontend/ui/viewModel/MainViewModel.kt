@@ -1,13 +1,13 @@
-package com.example.harraypotterapp.ui.viewModel
+package com.example.frontend.ui.viewModel
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.harraypotterapp.data.remote.dto.PersonagemApiResult
-import com.example.harraypotterapp.data.remote.dto.PersonagensItem
-import com.example.harraypotterapp.data.repository.IHogwartsRepository
+import com.example.backend.data.remote.dto.PersonagemApiResult
+import com.example.backend.data.remote.dto.PersonagensItem
+import com.example.backend.data.repository.IHogwartsRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

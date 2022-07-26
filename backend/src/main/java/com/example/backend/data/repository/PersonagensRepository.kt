@@ -1,7 +1,8 @@
-package com.example.harraypotterapp.data.repository
+package com.example.backend.data.repository
 
-import com.example.harraypotterapp.data.remote.IHogwartsClient
-import com.example.harraypotterapp.data.remote.dto.PersonagensItem
+import com.example.backend.data.remote.IHogwartsClient
+import com.example.backend.data.remote.dto.PersonagensItem
+import com.example.backend.data.repository.IHogwartsRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

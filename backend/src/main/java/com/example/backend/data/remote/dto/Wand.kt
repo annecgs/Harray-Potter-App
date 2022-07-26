@@ -1,4 +1,4 @@
-package com.example.harraypotterapp.data.remote.dto
+package com.example.backend.data.remote.dto
 
 data class Wand(
     val core: String,

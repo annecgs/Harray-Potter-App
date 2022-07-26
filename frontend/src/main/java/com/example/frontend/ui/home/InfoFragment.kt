@@ -1,4 +1,4 @@
-package com.example.harraypotterapp.ui.home
+package com.example.frontend.ui.home
 
 import android.content.Context
 import android.os.Bundle
@@ -9,11 +9,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.bumptech.glide.Glide
-import com.example.harraypotterapp.R
-import com.example.harraypotterapp.data.remote.dto.PersonagensItem
-import com.example.harraypotterapp.databinding.FragmentInfoBinding
-import com.example.harraypotterapp.ui.viewModel.MainViewModel
-import com.example.harraypotterapp.utils.Helpers
+import com.example.backend.data.remote.dto.PersonagensItem
+import com.example.frontend.R
+import com.example.frontend.databinding.FragmentInfoBinding
+import com.example.frontend.ui.viewModel.MainViewModel
+import com.example.frontend.utils.Helpers
 
 class InfoFragment : Fragment() {
 
@@ -60,7 +60,6 @@ class InfoFragment : Fragment() {
             genero(personagem)
             dataNascimento(personagem)
 
-
             binding.btnAddFavorite.setOnClickListener {
                 Log.d("Personagem:", "getData: $personagem")
                 when (personagem.isFavorite) {
@@ -81,26 +80,26 @@ class InfoFragment : Fragment() {
         }
     }
 
-    private fun dataNascimento(x: PersonagensItem){
-        if(x.dateOfBirth!= ""){
+    private fun dataNascimento(x: PersonagensItem) {
+        if (x.dateOfBirth != "") {
             binding.tvDataNascimento.text = x.dateOfBirth
-        }else{
+        } else {
             binding.tvDataNascimento.text = "Não informado"
         }
     }
 
-    private fun genero(x: PersonagensItem){
-        if(x.gender == "male"){
+    private fun genero(x: PersonagensItem) {
+        if (x.gender == "male") {
             binding.tvGenero.text = x.gender
             Glide.with(binding.root.context)
                 .load(R.drawable.iconmasculino)
                 .into(binding.iconGenero)
-        }else if (x.gender == "female"){
+        } else if (x.gender == "female") {
             binding.tvGenero.text = x.gender
             Glide.with(binding.root.context)
                 .load(R.drawable.iconfeminino)
                 .into(binding.iconGenero)
-        }else{
+        } else {
             binding.tvGenero.text = "Não informado"
             Glide.with(binding.root.context)
                 .load(R.drawable.notfoundicon)

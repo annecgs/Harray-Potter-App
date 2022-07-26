@@ -1,6 +1,6 @@
-package com.example.harraypotterapp.data.remote
+package com.example.backend.data.remote
 
-import com.example.harraypotterapp.data.remote.dto.PersonagensItem
+import com.example.backend.data.remote.dto.PersonagensItem
 import retrofit2.http.GET
 
 interface IHogwartsClient {

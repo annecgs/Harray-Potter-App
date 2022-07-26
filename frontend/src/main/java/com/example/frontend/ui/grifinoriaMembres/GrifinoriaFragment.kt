@@ -1,4 +1,4 @@
-package com.example.harraypotterapp.ui.grifinoriaMembres
+package com.example.frontend.ui.grifinoriaMembres
 
 import android.os.Bundle
 import android.util.Log
@@ -7,14 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.example.harraypotterapp.R
-import com.example.harraypotterapp.data.remote.dto.PersonagemApiResult
-import com.example.harraypotterapp.data.remote.dto.PersonagensItem
-import com.example.harraypotterapp.databinding.FragmentGrifinoriaBinding
-import com.example.harraypotterapp.ui.error.ErrorFragment
-import com.example.harraypotterapp.ui.home.InfoFragment
-import com.example.harraypotterapp.ui.viewModel.MainViewModel
-import com.example.harraypotterapp.utils.Helpers
+import com.example.frontend.R
+import com.example.frontend.databinding.FragmentGrifinoriaBinding
+import com.example.backend.data.remote.dto.PersonagemApiResult
+import com.example.backend.data.remote.dto.PersonagensItem
+import com.example.frontend.ui.error.ErrorFragment
+import com.example.frontend.ui.home.InfoFragment
+import com.example.frontend.ui.viewModel.MainViewModel
+import com.example.frontend.utils.Helpers
 
 class GrifinoriaFragment : Fragment() {
     private val viewModel: MainViewModel by activityViewModels { Helpers.getMainViewModelFactory() }

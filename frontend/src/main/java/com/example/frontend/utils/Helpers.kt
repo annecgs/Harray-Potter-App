@@ -1,10 +1,10 @@
-package com.example.harraypotterapp.utils
+package com.example.frontend.utils
 
-import com.example.harraypotterapp.data.remote.IHogwartsClient
-import com.example.harraypotterapp.data.remote.dto.PersonagensItem
-import com.example.harraypotterapp.data.repository.PersonagensRepository
-import com.example.harraypotterapp.networkUtils.RetrofitInstance
-import com.example.harraypotterapp.ui.viewModel.MainViewModelFactory
+import com.example.backend.data.remote.IHogwartsClient
+import com.example.backend.data.remote.dto.PersonagensItem
+import com.example.backend.data.repository.PersonagensRepository
+import com.example.backend.networkUtils.RetrofitInstance
+import com.example.frontend.ui.viewModel.MainViewModelFactory
 import java.util.ArrayList
 
 class Helpers {

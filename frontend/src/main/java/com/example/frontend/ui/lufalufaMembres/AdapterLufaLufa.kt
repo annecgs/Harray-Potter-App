@@ -1,4 +1,4 @@
-package com.example.harraypotterapp.ui.lufalufaMembres
+package com.example.frontend.ui.lufalufaMembres
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.harraypotterapp.R
-import com.example.harraypotterapp.data.remote.dto.PersonagensItem
-import com.example.harraypotterapp.databinding.HouseMembrerBinding
+import com.example.frontend.R
+import com.example.frontend.databinding.HouseMembrerBinding
+import com.example.backend.data.remote.dto.PersonagensItem
 
 class AdapterLufaLufa : ListAdapter<PersonagensItem, AdapterLufaLufa.ViewHolder>(DIFF_CALLBACK) {
     var onClickListener: ((personagemId: String) -> Unit)? = null

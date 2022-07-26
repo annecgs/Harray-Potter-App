@@ -1,6 +1,6 @@
-package com.example.harraypotterapp.networkUtils
+package com.example.backend.networkUtils
 
-import com.example.harraypotterapp.utils.Constants.Companion.BASE_URL
+import com.example.backend.utils.Constants.Companion.BASE_URL
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
@@ -19,10 +19,10 @@ class RetrofitInstance {
 
             return retrofit
 
-            //return Retrofit.Builder()
-           //     .baseUrl(com.example.harraypotterapp.utils.Constants.BASE_URL)
-             //   .addConverterFactory(GsonConverterFactory.create())
-              //  .build()
+            // return Retrofit.Builder()
+            //     .baseUrl(com.example.backend.utils.Constants.BASE_URL)
+            //   .addConverterFactory(GsonConverterFactory.create())
+            //  .build()
         }
     }
 }

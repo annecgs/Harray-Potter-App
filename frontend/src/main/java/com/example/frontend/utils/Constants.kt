@@ -1,4 +1,4 @@
-package com.example.harraypotterapp.utils
+package com.example.frontend.utils
 
 class Constants {
     companion object {

@@ -1,4 +1,4 @@
-package com.example.harraypotterapp.ui.error
+package com.example.frontend.ui.error
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,11 +8,11 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.bumptech.glide.Glide
-import com.example.harraypotterapp.R
-import com.example.harraypotterapp.databinding.FragmentErrorBinding
-import com.example.harraypotterapp.ui.home.HomeFragment
-import com.example.harraypotterapp.ui.viewModel.MainViewModel
-import com.example.harraypotterapp.utils.Helpers
+import com.example.frontend.R
+import com.example.frontend.databinding.FragmentErrorBinding
+import com.example.frontend.ui.home.HomeFragment
+import com.example.frontend.ui.viewModel.MainViewModel
+import com.example.frontend.utils.Helpers
 
 class ErrorFragment : Fragment() {
 

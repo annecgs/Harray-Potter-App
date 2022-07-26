@@ -7,37 +7,37 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.harraypotterapp.ui.home.HomeFragment"
+        android:name="com.example.frontend.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.example.harraypotterapp.ui.grifinoriaMembres.GrifinoriaFragment"
+        android:name="com.example.frontend.ui.grifinoriaMembres.GrifinoriaFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_grifinoria" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.example.harraypotterapp.ui.corvinalMembres.CorvinalFragment"
+        android:name="com.example.frontend.ui.corvinalMembres.CorvinalFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_corvinal" />
 
     <fragment
         android:id="@+id/nav_lufalufa"
-        android:name="com.example.harraypotterapp.ui.lufalufaMembres.LufaLufaFragment"
+        android:name="com.example.frontend.ui.lufalufaMembres.LufaLufaFragment"
         android:label="@string/menu_lufalufa"
         tools:layout="@layout/fragment_lufa_lufa"/>
 
     <fragment
         android:id="@+id/nav_sonserina"
-        android:name="com.example.harraypotterapp.ui.sonserinaMembres.SonserinaFragment"
+        android:name="com.example.frontend.ui.sonserinaMembres.SonserinaFragment"
         android:label="@string/menu_sonserina"
         tools:layout="@layout/fragment_sonserina"/>
 
     <fragment
         android:id="@+id/nav_favoritos"
-        android:name="com.example.harraypotterapp.ui.favorites.FavoritesFragment"
+        android:name="com.example.frontend.ui.favorites.FavoritesFragment"
         android:label="@string/menu_favoritos"
         tools:layout="@layout/fragment_favorites"/>
 </navigation>

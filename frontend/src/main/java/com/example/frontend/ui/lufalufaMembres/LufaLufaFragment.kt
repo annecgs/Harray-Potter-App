@@ -1,4 +1,4 @@
-package com.example.harraypotterapp.ui.lufalufaMembres
+package com.example.frontend.ui.lufalufaMembres
 
 import android.os.Bundle
 import android.util.Log
@@ -7,14 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.example.harraypotterapp.R
-import com.example.harraypotterapp.data.remote.dto.PersonagemApiResult
-import com.example.harraypotterapp.data.remote.dto.PersonagensItem
-import com.example.harraypotterapp.databinding.FragmentLufaLufaBinding
-import com.example.harraypotterapp.ui.error.ErrorFragment
-import com.example.harraypotterapp.ui.home.InfoFragment
-import com.example.harraypotterapp.ui.viewModel.MainViewModel
-import com.example.harraypotterapp.utils.Helpers
+import com.example.frontend.R
+import com.example.frontend.databinding.FragmentLufaLufaBinding
+import com.example.backend.data.remote.dto.PersonagemApiResult
+import com.example.backend.data.remote.dto.PersonagensItem
+import com.example.frontend.ui.error.ErrorFragment
+import com.example.frontend.ui.home.InfoFragment
+import com.example.frontend.ui.viewModel.MainViewModel
+import com.example.frontend.utils.Helpers
 
 class LufaLufaFragment : Fragment() {
     private val viewModel: MainViewModel by activityViewModels { Helpers.getMainViewModelFactory() }
@@ -129,7 +129,6 @@ class LufaLufaFragment : Fragment() {
         adapter.onClickListener = { personagemId ->
             viewModel.setPersonagens(personagemId)
             replaceFragment(InfoFragment())
-
         }
     }
 

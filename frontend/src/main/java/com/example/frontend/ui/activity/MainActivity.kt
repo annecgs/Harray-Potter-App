@@ -1,4 +1,4 @@
-package com.example.harraypotterapp.ui.activity
+package com.example.frontend.ui.activity
 
 import android.graphics.Color
 import android.os.Build
@@ -13,9 +13,10 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.harraypotterapp.R
-import com.example.harraypotterapp.databinding.ActivityMainBinding
+import com.example.frontend.R
+import com.example.frontend.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
+import kotlinx.android.synthetic.main.app_bar_main.view.*
 
 class MainActivity : AppCompatActivity() {
 

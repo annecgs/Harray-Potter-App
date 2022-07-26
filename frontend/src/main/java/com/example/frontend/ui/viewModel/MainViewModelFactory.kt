@@ -1,8 +1,8 @@
-package com.example.harraypotterapp.ui.viewModel
+package com.example.frontend.ui.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.harraypotterapp.data.repository.IHogwartsRepository
+import com.example.backend.data.repository.IHogwartsRepository
 
 class MainViewModelFactory(private val iHogwartsRepository: IHogwartsRepository) :
     ViewModelProvider.Factory {
