@@ -33,6 +33,6 @@ val mockPersonagemItem = listOf(
         "human",
         true,
         "1980",
-        true
+        false
     )
 )

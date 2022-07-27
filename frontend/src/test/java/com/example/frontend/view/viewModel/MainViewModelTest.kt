@@ -6,6 +6,7 @@ import com.example.backend.data.repository.PersonagensRepository
 import com.example.frontend.test_utils.MainCoroutineRule
 import com.example.frontend.test_utils.getOrAwaitValue
 import com.example.frontend.ui.viewModel.MainViewModel
+import io.mockk.InternalPlatformDsl.toArray
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Rule
@@ -41,7 +42,7 @@ class MainViewModelTest {
     @Test
     fun `Set ID of _personagemSelected and return the same ID in personagemSelected`() {
         // Given
-        val id = "Harry Potter"
+        val id = "Harry"
 
         // Then
         mainViewModelOk.setPersonagens(id)
@@ -115,5 +116,4 @@ class MainViewModelTest {
             mainViewModelOk.personagemSelected.getOrAwaitValue().isFavorite
         )
     }
-
 }

@@ -34,6 +34,8 @@ buildscript {
         def jupyter_api = '5.8.2'
         def work_version = '2.7.1'
         def collection_version = "1.2.0"
+        def mock_version = '1.12.4'
+        def fragment_version = "1.5.0"
 
         libraries = [
                 // Moshi
@@ -74,6 +76,9 @@ buildscript {
                 "androidx.test.espresso:espresso-core:$espresso_core_version",
                 "androidx.test.espresso:espresso-contrib:$espresso_core_version",
                 "androidx.test.espresso:espresso-intents:$espresso_core_version",
+                "io.mockk:mockk:$mock_version",
+
+                "androidx.fragment:fragment-testing:$fragment_version"
 
         ]
 
@@ -83,7 +88,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.1'
+        classpath 'com.android.tools.build:gradle:7.1.3'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // NOTE: Do not place your application dependencies here; they belong
