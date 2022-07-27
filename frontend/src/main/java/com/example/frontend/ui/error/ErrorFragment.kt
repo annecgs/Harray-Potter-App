@@ -49,67 +49,67 @@ class ErrorFragment : Fragment() {
             Glide.with(requireContext())
                 .load(R.drawable.error_400)
                 .centerCrop()
-                .into(binding.imageView2)
+                .into(binding.imageError)
         } else if (mensagem.contains("401")) {
             binding.mensagem.text = "O site que você está tentando acessar se encontra protegido e requer autorização ou autenticação"
             Glide.with(requireContext())
                 .load(R.drawable.error_401)
                 .centerCrop()
-                .into(binding.imageView2)
+                .into(binding.imageError)
         } else if (mensagem.contains("403")) {
             binding.mensagem.text = "Negação por parte do proprietário, que não permite que a página receba visitas"
             Glide.with(requireContext())
                 .load(R.drawable.error_403)
                 .centerCrop()
-                .into(binding.imageView2)
+                .into(binding.imageError)
         } else if (mensagem.contains("404")) {
             binding.mensagem.text = "URL não localizada"
             Glide.with(requireContext())
                 .load(R.drawable.error_404)
                 .centerCrop()
-                .into(binding.imageView2)
+                .into(binding.imageError)
         } else if (mensagem.contains("410")) {
             binding.mensagem.text = "URL excluída permanentemente"
             Glide.with(requireContext())
                 .load(R.drawable.error_410_6)
                 .centerCrop()
-                .into(binding.imageView2)
+                .into(binding.imageError)
         } else if (mensagem.contains("429")) {
             binding.mensagem.text = "Você excedeu o limite de requisições"
             Glide.with(requireContext())
                 .load(R.drawable.error_429)
                 .centerCrop()
-                .into(binding.imageView2)
+                .into(binding.imageError)
         } else if (mensagem.contains("500")) {
             binding.mensagem.text = "O servidor não pode atender sua solicitação neste momento"
             Glide.with(requireContext())
                 .load(R.drawable.error_500_2)
                 .centerCrop()
-                .into(binding.imageView2)
+                .into(binding.imageError)
         } else if (mensagem.contains("502")) {
             binding.mensagem.text = "Falha de comunicação entre os servidores"
             Glide.with(requireContext())
                 .load(R.drawable.error_502_2)
                 .centerCrop()
-                .into(binding.imageView2)
+                .into(binding.imageError)
         } else if (mensagem.contains("503")) {
             binding.mensagem.text = "Serviço temporariamente indisponível"
             Glide.with(requireContext())
                 .load(R.drawable.error_503_2)
                 .centerCrop()
-                .into(binding.imageView2)
+                .into(binding.imageError)
         } else if (mensagem.contains("504")) {
             binding.mensagem.text = "Esperando por muito tempo para receber a resposta do servidor"
             Glide.with(requireContext())
                 .load(R.drawable.error_504)
                 .centerCrop()
-                .into(binding.imageView2)
+                .into(binding.imageError)
         } else if (mensagem.contains("505")) {
             binding.mensagem.text = "Versão HTTP não suportada"
             Glide.with(requireContext())
                 .load(R.drawable.error_505_5)
                 .centerCrop()
-                .into(binding.imageView2)
+                .into(binding.imageError)
         }
     }
 }

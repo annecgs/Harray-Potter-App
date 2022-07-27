@@ -107,7 +107,7 @@ class LufaLufaFragment : Fragment() {
                 errorFragment = ErrorFragment()
                 replaceFragment(ErrorFragment())
                 binding.rvLufalufaMembres.visibility = View.GONE
-                binding.includeHeader.imageView2.visibility = View.GONE
+                binding.includeHeader.imageError.visibility = View.GONE
                 binding.serchView.visibility = View.GONE
                 binding.includeDivider.root.visibility = View.GONE
                 binding.tvNoFavorites.visibility = View.GONE

@@ -109,7 +109,7 @@ class HomeFragment : Fragment() {
                     binding.progressBar.visibility = View.GONE
                     errorFragment = ErrorFragment()
                     replaceFragment(ErrorFragment())
-                    binding.includeHeader.imageView2.visibility = View.GONE
+                    binding.includeHeader.imageError.visibility = View.GONE
                     binding.serchView.visibility = View.GONE
                     binding.includeDivider.root.visibility = View.GONE
                     viewModel.mensagem = listPersonagem.throwable.message.toString()

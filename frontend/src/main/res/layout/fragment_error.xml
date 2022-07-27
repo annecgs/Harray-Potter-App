@@ -8,7 +8,7 @@
     tools:context=".ui.error.ErrorFragment">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageError"
         android:layout_width="350dp"
         android:layout_height="309dp"
         android:contentDescription="@string/try_again" />
