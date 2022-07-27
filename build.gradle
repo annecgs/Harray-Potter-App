@@ -28,6 +28,12 @@ buildscript {
         def espresso_core_version = '3.4.0'
         def lifecycle_viewmodel_ktx_version = '2.4.1'
         def coroutines_android_version = '1.6.2'
+        def androidx_test_version = '1.4.0'
+        def arch_version = '2.1.0'
+        def mockito_version = "4.3.1"
+        def jupyter_api = '5.8.2'
+        def work_version = '2.7.1'
+        def collection_version = "1.2.0"
 
         libraries = [
                 // Moshi
@@ -52,10 +58,22 @@ buildscript {
                 "androidx.navigation:navigation-ui-ktx:$navigation_ui_ktx_version",
                 "junit:junit:$junit_version",
                 "androidx.test.ext:junit:$test_ext_junit_version",
+                "org.junit.jupiter:junit-jupiter-api:$jupyter_api",
                 "androidx.test.espresso:espresso-core:$espresso_core_version",
 
                 // Coroutines testing
                 "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_android_version",
+                "androidx.arch.core:core-testing:$arch_version",
+                "androidx.test:runner:$androidx_test_version",
+                "androidx.test:rules:$androidx_test_version",
+                // mocks
+                "org.mockito:mockito-core:$mockito_version",
+                "androidx.work:work-testing:$work_version",
+                "androidx.collection:collection-ktx:$collection_version",
+                // Espresso
+                "androidx.test.espresso:espresso-core:$espresso_core_version",
+                "androidx.test.espresso:espresso-contrib:$espresso_core_version",
+                "androidx.test.espresso:espresso-intents:$espresso_core_version",
 
         ]
 
