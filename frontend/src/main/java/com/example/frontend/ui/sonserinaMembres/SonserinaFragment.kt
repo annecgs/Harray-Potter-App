@@ -5,17 +5,19 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.example.frontend.R
-import com.example.frontend.databinding.FragmentSonserinaBinding
 import com.example.backend.data.remote.dto.PersonagemApiResult
 import com.example.backend.data.remote.dto.PersonagensItem
+import com.example.frontend.R
+import com.example.frontend.databinding.FragmentSonserinaBinding
 import com.example.frontend.ui.error.ErrorFragment
 import com.example.frontend.ui.home.InfoFragment
 import com.example.frontend.ui.viewModel.MainViewModel
 import com.example.frontend.utils.Helpers
 import kotlinx.android.synthetic.main.fragment_error.view.*
+import kotlinx.android.synthetic.main.layout_header_sonserina.view.*
 
 class SonserinaFragment : Fragment() {
 
@@ -54,7 +56,8 @@ class SonserinaFragment : Fragment() {
 
     private fun setupSearchView(list: List<PersonagensItem>) {
         var newList: MutableList<PersonagensItem> = ArrayList()
-        binding.serchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
+        // binding.serchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
+        binding.serchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 binding.serchView.clearFocus()
                 newList = Helpers.FilterListQuery(query, list)
@@ -109,7 +112,7 @@ class SonserinaFragment : Fragment() {
                 errorFragment = ErrorFragment()
                 replaceFragment(ErrorFragment())
                 binding.rvSonserinaMembres.visibility = View.GONE
-                binding.includeHeader.imageError.visibility = View.GONE
+                binding.includeHeader.imageHouseSonserina.visibility = View.GONE
                 binding.serchView.visibility = View.GONE
                 binding.includeDivider.root.visibility = View.GONE
                 binding.tvNoFavorites.visibility = View.GONE
