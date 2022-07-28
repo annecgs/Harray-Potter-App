@@ -5,12 +5,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.example.frontend.R
-import com.example.frontend.databinding.FragmentLufaLufaBinding
 import com.example.backend.data.remote.dto.PersonagemApiResult
 import com.example.backend.data.remote.dto.PersonagensItem
+import com.example.frontend.R
+import com.example.frontend.databinding.FragmentLufaLufaBinding
 import com.example.frontend.ui.error.ErrorFragment
 import com.example.frontend.ui.home.InfoFragment
 import com.example.frontend.ui.viewModel.MainViewModel
@@ -52,20 +53,23 @@ class LufaLufaFragment : Fragment() {
 
     private fun setupSearchView(list: List<PersonagensItem>) {
         var newList: MutableList<PersonagensItem> = ArrayList()
-        binding.serchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                binding.serchView.clearFocus()
-                newList = Helpers.FilterListQuery(query, list)
-                setlistQueryAdapter(newList)
-                return true
-            }
+        // binding.serchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
+        binding.serchView.setOnQueryTextListener(object :
+                androidx.appcompat.widget.SearchView.OnQueryTextListener,
+                SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    binding.serchView.clearFocus()
+                    newList = Helpers.FilterListQuery(query, list)
+                    setlistQueryAdapter(newList)
+                    return true
+                }
 
-            override fun onQueryTextChange(newText: String?): Boolean {
-                newList = Helpers.FilterListQuery(newText, list)
-                setlistQueryAdapter(newList)
-                return true
-            }
-        })
+                override fun onQueryTextChange(newText: String?): Boolean {
+                    newList = Helpers.FilterListQuery(newText, list)
+                    setlistQueryAdapter(newList)
+                    return true
+                }
+            })
     }
 
     private fun setlistQueryAdapter(newList: MutableList<PersonagensItem>) {
@@ -107,7 +111,7 @@ class LufaLufaFragment : Fragment() {
                 errorFragment = ErrorFragment()
                 replaceFragment(ErrorFragment())
                 binding.rvLufalufaMembres.visibility = View.GONE
-                binding.includeHeader.imageError.visibility = View.GONE
+                binding.includeHeader.imageHouseLufaLufa.visibility = View.GONE
                 binding.serchView.visibility = View.GONE
                 binding.includeDivider.root.visibility = View.GONE
                 binding.tvNoFavorites.visibility = View.GONE
