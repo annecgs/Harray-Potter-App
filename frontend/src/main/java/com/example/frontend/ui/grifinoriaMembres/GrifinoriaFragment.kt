@@ -5,12 +5,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.example.frontend.R
-import com.example.frontend.databinding.FragmentGrifinoriaBinding
 import com.example.backend.data.remote.dto.PersonagemApiResult
 import com.example.backend.data.remote.dto.PersonagensItem
+import com.example.frontend.R
+import com.example.frontend.databinding.FragmentGrifinoriaBinding
 import com.example.frontend.ui.error.ErrorFragment
 import com.example.frontend.ui.home.InfoFragment
 import com.example.frontend.ui.viewModel.MainViewModel
@@ -53,7 +54,8 @@ class GrifinoriaFragment : Fragment() {
 
     private fun setupSearchView(list: List<PersonagensItem>) {
         var newList: MutableList<PersonagensItem> = ArrayList()
-        binding.serchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
+        // binding.serchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
+        binding.serchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 binding.serchView.clearFocus()
                 newList = Helpers.FilterListQuery(query, list)
@@ -73,6 +75,7 @@ class GrifinoriaFragment : Fragment() {
         if (newList.isNotEmpty()) {
             setListAdapter(newList)
             binding.widgetListEmpty.visibility = View.GONE
+            binding.tvNoFavorites.visibility = View.GONE
             binding.rvGrifinoriaMembres.visibility = View.VISIBLE
             binding.includeDivider.root.visibility = View.VISIBLE
         } else {

@@ -17,6 +17,7 @@ import com.example.frontend.ui.home.InfoFragment
 import com.example.frontend.ui.viewModel.MainViewModel
 import com.example.frontend.utils.Helpers
 import kotlinx.android.synthetic.main.fragment_error.view.*
+import kotlinx.android.synthetic.main.layout_header.view.*
 
 class FavoritesFragment : Fragment() {
     private val viewModel: MainViewModel by activityViewModels { Helpers.getMainViewModelFactory() }
@@ -80,6 +81,7 @@ class FavoritesFragment : Fragment() {
             binding.recyclerViewFavorites.visibility = View.GONE
             binding.includeDivider.root.visibility = View.GONE
             binding.widgetListEmpty.visibility = View.VISIBLE
+            binding.tvNoFavorites.visibility = View.VISIBLE
         }
     }
 
@@ -111,7 +113,7 @@ class FavoritesFragment : Fragment() {
                 errorFragment = ErrorFragment()
                 replaceFragment(ErrorFragment())
                 binding.recyclerViewFavorites.visibility = View.GONE
-                binding.includeHeader.imageError.visibility = View.GONE
+                binding.includeHeader.imageHogwarts.visibility = View.GONE
                 binding.serchView.visibility = View.GONE
                 binding.includeDivider.root.visibility = View.GONE
                 binding.tvNoFavorites.visibility = View.GONE

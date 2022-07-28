@@ -9,7 +9,7 @@
     android:background="#191919">
 
     <ImageView
-        android:id="@+id/imageError"
+        android:id="@+id/imageHogwarts"
         android:layout_width="93dp"
         android:layout_height="93dp"
         android:gravity="center"

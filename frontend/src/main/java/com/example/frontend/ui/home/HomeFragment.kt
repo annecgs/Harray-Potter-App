@@ -18,6 +18,7 @@ import com.example.frontend.ui.error.ErrorFragment
 import com.example.frontend.ui.viewModel.MainViewModel
 import com.example.frontend.utils.Helpers
 import kotlinx.android.synthetic.main.fragment_error.view.*
+import kotlinx.android.synthetic.main.layout_header.view.*
 
 class HomeFragment : Fragment() {
     private val viewModel: MainViewModel by activityViewModels() { Helpers.getMainViewModelFactory() }
@@ -109,7 +110,7 @@ class HomeFragment : Fragment() {
                     binding.progressBar.visibility = View.GONE
                     errorFragment = ErrorFragment()
                     replaceFragment(ErrorFragment())
-                    binding.includeHeader.imageError.visibility = View.GONE
+                    binding.includeHeader.imageHogwarts.visibility = View.GONE
                     binding.serchView.visibility = View.GONE
                     binding.includeDivider.root.visibility = View.GONE
                     viewModel.mensagem = listPersonagem.throwable.message.toString()

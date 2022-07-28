@@ -16,6 +16,7 @@ class HomeTest {
     @Test
     fun TestHomeInfo() {
         val scenario = launchFragmentInContainer<HomeFragment>()
+        Espresso.pressBack()
         Espresso.onView(ViewMatchers.withId(R.id.serchView)).check(matches(isDisplayed()))
     }
 }
