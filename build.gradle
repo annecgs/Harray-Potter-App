@@ -80,7 +80,7 @@ buildscript {
                 "io.mockk:mockk:$mock_version",
 
                 "androidx.fragment:fragment-testing:$fragment_version",
-                 "com.google.truth:truth:$truth_version"
+                "com.google.truth:truth:$truth_version"
 
         ]
 

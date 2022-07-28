@@ -5,18 +5,19 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.example.frontend.R
-import com.example.frontend.databinding.FragmentCorvinalBinding
 import com.example.backend.data.remote.dto.PersonagemApiResult
 import com.example.backend.data.remote.dto.PersonagensItem
+import com.example.frontend.R
+import com.example.frontend.databinding.FragmentCorvinalBinding
 import com.example.frontend.ui.error.ErrorFragment
 import com.example.frontend.ui.home.InfoFragment
 import com.example.frontend.ui.viewModel.MainViewModel
 import com.example.frontend.utils.Helpers
 import kotlinx.android.synthetic.main.fragment_error.view.*
-
+import kotlinx.android.synthetic.main.layout_header_corvinal.view.*
 
 class CorvinalFragment : Fragment() {
     private val viewModel: MainViewModel by activityViewModels { Helpers.getMainViewModelFactory() }
@@ -55,20 +56,23 @@ class CorvinalFragment : Fragment() {
 
     private fun setupSearchView(list: List<PersonagensItem>) {
         var newList: MutableList<PersonagensItem> = ArrayList()
-        binding.serchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                binding.serchView.clearFocus()
-                newList = Helpers.FilterListQuery(query, list)
-                setlistQueryAdapter(newList)
-                return true
-            }
+        // binding.serchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
+        binding.serchView.setOnQueryTextListener(object :
+                SearchView.OnQueryTextListener,
+                android.widget.SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    binding.serchView.clearFocus()
+                    newList = Helpers.FilterListQuery(query, list)
+                    setlistQueryAdapter(newList)
+                    return true
+                }
 
-            override fun onQueryTextChange(newText: String?): Boolean {
-                newList = Helpers.FilterListQuery(newText, list)
-                setlistQueryAdapter(newList)
-                return true
-            }
-        })
+                override fun onQueryTextChange(newText: String?): Boolean {
+                    newList = Helpers.FilterListQuery(newText, list)
+                    setlistQueryAdapter(newList)
+                    return true
+                }
+            })
     }
 
     private fun setlistQueryAdapter(newList: MutableList<PersonagensItem>) {
@@ -110,7 +114,7 @@ class CorvinalFragment : Fragment() {
                 errorFragment = ErrorFragment()
                 replaceFragment(ErrorFragment())
                 binding.rvCorvinalMembres.visibility = View.GONE
-                binding.includeHeader.imageError.visibility = View.GONE
+                binding.includeHeader.imageHouseCorvinal.visibility = View.GONE
                 binding.serchView.visibility = View.GONE
                 binding.includeDivider.root.visibility = View.GONE
                 binding.tvNoFavorites.visibility = View.GONE
