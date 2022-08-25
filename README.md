@@ -50,11 +50,6 @@ favorito)</li>
 <li>Grupos de conteúdo relacionado aplicação do android:screenReaderFocusable do objeto de contêiner como true e o atributo android:focusable de cada objeto interno como false.</li>
 
 
-<h2>Aplicação de testes ViewModel</h2>
-<li>kotlinx-coroutines-test</li>
-<li>mockk</li>
-<li>core:core-testing</li>
-
 <h2>Demonstrativo tela de erro</h2>
 <p float="left">
 <img src="https://user-images.githubusercontent.com/103140224/178013725-4d78bc4c-bb2a-4535-b562-e86c5d275404.png" width="220px" height="350px"/>
