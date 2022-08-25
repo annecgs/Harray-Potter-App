@@ -16,7 +16,6 @@
 <li>Boas práticas com aplicação do Ktlint</li>
 <li>Acessibilidade, utilizar https://developer.android.com/guide/topics/ui/accessibility/principles para
 referência ou https://guia-wcag.com/ ;
-<li>Suporte versão do Android 12;</li>
 <li>Modularização (a fazer!);</li>
 <li>Testes unitários em JUnit (a fazer!);</li>
 
