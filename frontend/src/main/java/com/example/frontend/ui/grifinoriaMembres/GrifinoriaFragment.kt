@@ -54,8 +54,8 @@ class GrifinoriaFragment : Fragment() {
 
     private fun setupSearchView(list: List<PersonagensItem>) {
         var newList: MutableList<PersonagensItem> = ArrayList()
-        // binding.serchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
-        binding.serchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+         binding.serchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
+        //binding.serchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 binding.serchView.clearFocus()
                 newList = Helpers.FilterListQuery(query, list)

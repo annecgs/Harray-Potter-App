@@ -42,7 +42,7 @@ class ErrorFragment : Fragment() {
         fragmentTransaction?.commit()
     }
 
-    private fun mensagemErro() {
+    fun mensagemErro() {
         val mensagem = viewModel.mensagem
         if (mensagem.contains("400")) {
             binding.mensagem.text = "Instabilidade no seu computador ou na sua conexão de Internet"
