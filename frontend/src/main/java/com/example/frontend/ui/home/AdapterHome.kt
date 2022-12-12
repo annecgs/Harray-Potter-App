@@ -33,6 +33,7 @@ class AdapterHome : ListAdapter<PersonagensItem, AdapterHome.ViewHolder>(DIFF_CA
             findHouse(x)
             setImage(x)
             getFavorite(x)
+            trativeyearOfBirth(x)
 
             binding.root.setOnClickListener {
                 onClickListener?.invoke(x.name)
@@ -81,6 +82,15 @@ class AdapterHome : ListAdapter<PersonagensItem, AdapterHome.ViewHolder>(DIFF_CA
                 false -> binding.ivFavoriteItem.visibility = View.GONE
             }
         }
+        
+        
+        private fun trativeyearOfBirth(x: PersonagensItem) {
+            if (x.yearOfBirth == null) {
+                x.yearOfBirth = 0
+            }
+        }
+        
+        
     }
 
     companion object DIFF_CALLBACK {
