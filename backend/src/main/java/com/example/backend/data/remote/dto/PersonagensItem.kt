@@ -16,6 +16,6 @@ data class PersonagensItem(
     val patronus: String,
     val species: String,
     val wizard: Boolean,
-    val yearOfBirth: String,
+    var yearOfBirth: Int?,
     var isFavorite: Boolean = false
 )
