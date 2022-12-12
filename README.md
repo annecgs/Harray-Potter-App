@@ -95,8 +95,8 @@ favorito)</li>
 
 
 <br/>
-<h2>Update de api</h2>
-<p>Devido a problemas de disponibilidade dos dados a API "http://hp-api.herokuapp.com/api/" foi subistituída pela API "https://hp-api.onrender.com/" </p>
+<h2>Update de API</h2>
+<p>Devido a problemas de disponibilidade dos dados a API "http://hp-api.herokuapp.com/api/" foi substituida pela API "https://hp-api.onrender.com/" </p>
 
 
 
