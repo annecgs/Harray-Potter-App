@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <!--group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/hogwarts_logo2"
@@ -32,5 +33,54 @@
             android:icon="@drawable/iconstar"
             android:title="@string/menu_favoritos" />
 
+    </group-->
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            app:showAsAction="always"
+            app:actionLayout="@layout/item_menu_hogwarts"
+            tools:ignore="MenuTitle" />
     </group>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_gallery"
+            app:showAsAction="always"
+            app:actionLayout="@layout/item_menu_grifinoria"
+            tools:ignore="MenuTitle" />
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_slideshow"
+            app:showAsAction="always"
+            app:actionLayout="@layout/item_menu_corvinal"
+            tools:ignore="MenuTitle" />
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_lufalufa"
+            app:showAsAction="always"
+            app:actionLayout="@layout/item_menu_lufa_lufa"
+            tools:ignore="MenuTitle" />
+    </group>
+
+    <group android:checkableBehavior="single">
+    <item
+        android:id="@+id/nav_sonserina"
+        app:showAsAction="always"
+        app:actionLayout="@layout/item_menu_sonserina"
+        tools:ignore="MenuTitle" />
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_favoritos"
+            app:showAsAction="always"
+            app:actionLayout="@layout/item_menu_favoritos"
+            tools:ignore="MenuTitle" />
+    </group>
+
 </menu>

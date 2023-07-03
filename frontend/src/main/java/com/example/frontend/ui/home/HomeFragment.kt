@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.backend.data.remote.dto.PersonagemApiResult
@@ -143,13 +144,14 @@ class HomeFragment : Fragment() {
     }
 
     private fun goToFirstItemInRecyclerView() {
-        val linearLayoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        binding.rvHome.layoutManager = linearLayoutManager
+        //val linearLayoutManager =
+         //   LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        val layoutManager = GridLayoutManager(activity, 2)
+        binding.rvHome.layoutManager = layoutManager
         binding.rvHome.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
-                if (linearLayoutManager.findFirstVisibleItemPosition() == 0) {
+                if (layoutManager.findFirstVisibleItemPosition() == 0) {
                     binding.fab.visibility = View.GONE
                 } else binding.fab.visibility = View.VISIBLE
             }

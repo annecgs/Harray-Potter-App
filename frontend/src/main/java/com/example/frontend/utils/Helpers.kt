@@ -20,7 +20,7 @@ class Helpers {
         fun FilterListQuery(text: String?, list: List<PersonagensItem>): MutableList<PersonagensItem> {
             var newList: MutableList<PersonagensItem> = ArrayList()
             list.forEach {
-                if (it.name.contains(text.toString(), true)
+                if (it.name?.contains(text.toString(), true) == true
                 ) {
                     newList.add(it)
                 }

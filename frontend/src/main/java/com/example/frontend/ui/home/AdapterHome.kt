@@ -36,7 +36,7 @@ class AdapterHome : ListAdapter<PersonagensItem, AdapterHome.ViewHolder>(DIFF_CA
             trativeyearOfBirth(x)
 
             binding.root.setOnClickListener {
-                onClickListener?.invoke(x.name)
+                x.name?.let { it1 -> onClickListener?.invoke(it1) }
             }
         }
 

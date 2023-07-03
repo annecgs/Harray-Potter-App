@@ -28,7 +28,7 @@ class AdapterSonserina : ListAdapter<PersonagensItem, AdapterSonserina.ViewHolde
             setImage(x)
 
             binding.linearLayout2.setOnClickListener {
-                onClickListener?.invoke(x.name)
+                x.name?.let { it1 -> onClickListener?.invoke(it1) }
             }
         }
 

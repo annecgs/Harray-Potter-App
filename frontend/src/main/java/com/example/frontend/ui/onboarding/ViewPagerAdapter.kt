@@ -1,4 +1,4 @@
-package com.example.androiddeveloper.ui.adapters
+package com.example.frontend.ui.onboarding
 
 
 import android.content.Context
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.viewpager.widget.PagerAdapter
-import com.example.androiddeveloper.R
+import com.example.frontend.R
 import java.util.*
 
 class ViewPagerAdapter(val context: Context, val imageList: List<Int>) : PagerAdapter() {
@@ -30,13 +30,16 @@ class ViewPagerAdapter(val context: Context, val imageList: List<Int>) : PagerAd
         val boxPosition01: ConstraintLayout = itemView.findViewById<View>(R.id.position_one) as ConstraintLayout
         val boxPosition02: ConstraintLayout = itemView.findViewById<View>(R.id.position_two) as ConstraintLayout
         val boxPosition03: ConstraintLayout = itemView.findViewById<View>(R.id.position_three) as ConstraintLayout
+        val boxPosition04: ConstraintLayout = itemView.findViewById<View>(R.id.position_for) as ConstraintLayout
 
         if(position == 0){
             boxPosition01.visibility = View.VISIBLE
         } else if(position == 1){
             boxPosition02.visibility = View.VISIBLE
-        } else {
+        } else if(position == 2){
             boxPosition03.visibility = View.VISIBLE
+        } else {
+            boxPosition04.visibility = View.VISIBLE
         }
 
         imageView.setImageResource(imageList.get(position))
