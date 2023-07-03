@@ -63,7 +63,7 @@ class AdapterFavoritos : ListAdapter<PersonagensItem, AdapterFavoritos.ViewHolde
                     .into(binding.imageMembrer)
             } else {
                 Glide.with(binding.root.context)
-                    .load(R.drawable.bruxonaoidentificado)
+                    .load(R.drawable.sem_foto)
                     .into(binding.imageMembrer)
             }
         }

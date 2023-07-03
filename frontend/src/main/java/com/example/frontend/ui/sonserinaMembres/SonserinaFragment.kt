@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.backend.data.remote.dto.PersonagemApiResult
 import com.example.backend.data.remote.dto.PersonagensItem
 import com.example.frontend.R
@@ -42,12 +44,12 @@ class SonserinaFragment : Fragment() {
 
     private fun setupAdapter() {
         adapter = AdapterSonserina()
-        binding.rvSonserinaMembres.adapter = adapter
+        //binding.rvSonserinaMembres.adapter = adapter
 
-        // val layoutManager = GridLayoutManager(activity, 2)
-        // layoutManager.orientation = RecyclerView.VERTICAL
-        // binding.rvGrifinioriaMembres.layoutManager = layoutManager
-        // binding.rvGrifinioriaMembres.adapter = adapter
+         val layoutManager = GridLayoutManager(activity, 2)
+         layoutManager.orientation = RecyclerView.VERTICAL
+         binding.rvSonserinaMembres.layoutManager = layoutManager
+         binding.rvSonserinaMembres.adapter = adapter
 
         viewModel.personagemItem.observe(viewLifecycleOwner) { listPersonagens ->
             getMembresGrifindor(listPersonagens)

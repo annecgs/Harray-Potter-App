@@ -46,10 +46,10 @@ class InfoFragment : Fragment() {
         viewModel.personagemSelected.observe(viewLifecycleOwner) { personagem ->
             val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return@observe
             if (sharedPref.all.containsKey(personagem.name)) {
-                binding.ivFavorite.visibility = View.VISIBLE
+                binding.ivFavorite.setImageResource(R.drawable.favorito_on)
                 binding.btnAddFavorite.text = "REMOVER"
             } else {
-                binding.ivFavorite.visibility = View.GONE
+                binding.ivFavorite.setImageResource(R.drawable.favorito_off)
                 binding.btnAddFavorite.text = "ADICIONAR"
             }
 
@@ -59,6 +59,8 @@ class InfoFragment : Fragment() {
             setImage(personagem)
             genero(personagem)
             dataNascimento(personagem)
+            setAncestry(personagem)
+            setPatrono(personagem)
 
             binding.btnAddFavorite.setOnClickListener {
                 Log.d("Personagem:", "getData: $personagem")
@@ -67,13 +69,13 @@ class InfoFragment : Fragment() {
                         sharedPref.edit().remove(personagem.name).apply()
                         viewModel.setFavorite(false)
                         binding.btnAddFavorite.text = "ADICIONAR"
-                        binding.ivFavorite.visibility = View.GONE
+                        binding.ivFavorite.setImageResource(R.drawable.favorito_on)
                     }
                     false -> { // Vai adicionar aos favoritos
                         sharedPref.edit().putString(personagem.name, personagem.name).apply()
                         viewModel.setFavorite(true)
                         binding.btnAddFavorite.text = "REMOVER"
-                        binding.ivFavorite.visibility = View.VISIBLE
+                        binding.ivFavorite.setImageResource(R.drawable.favorito_off)
                     }
                 }
             }
@@ -131,18 +133,26 @@ class InfoFragment : Fragment() {
             Glide.with(binding.root.context)
                 .load(R.drawable.grifinoria)
                 .into(binding.casaIcon)
+            binding.backgroundHouse.setBackgroundResource(R.drawable.background_grifinoria)
+            binding.tvHouse.setText(x.house)
         } else if (x.house == "Hufflepuff") {
             Glide.with(binding.root.context)
                 .load(R.drawable.lufalufa)
                 .into(binding.casaIcon)
+            binding.backgroundHouse.setBackgroundResource(R.drawable.background_lufalufa)
+            binding.tvHouse.setText(x.house)
         } else if (x.house == "Ravenclaw") {
             Glide.with(binding.root.context)
                 .load(R.drawable.corvinal)
                 .into(binding.casaIcon)
+            binding.backgroundHouse.setBackgroundResource(R.drawable.background_corvinal)
+            binding.tvHouse.setText(x.house)
         } else if (x.house == "Slytherin") {
             Glide.with(binding.root.context)
                 .load(R.drawable.sonserina)
                 .into(binding.casaIcon)
+            binding.backgroundHouse.setBackgroundResource(R.drawable.background_sonserina)
+            binding.tvHouse.setText(x.house)
         } else {
             Glide.with(binding.root.context)
                 .load(R.drawable.casanaodefinida)
@@ -154,12 +164,30 @@ class InfoFragment : Fragment() {
         if (x.image != "") {
             Glide.with(binding.root.context)
                 .load(x.image)
+                .circleCrop()
                 .into(binding.imagePeople)
         } else {
             Glide.with(binding.root.context)
-                .load(R.drawable.bruxonaoidentificado)
+                .load(R.drawable.sem_foto)
+                .circleCrop()
                 .into(binding.imagePeople)
         }
+    }
+
+    private fun setPatrono(x: PersonagensItem){
+        if(x.patronus != ""){
+            binding.tvPatrono.setText(x.patronus)
+        } else{
+            binding.tvPatrono.text = "Não localizado"
+        }
+    }
+
+    private fun setAncestry(x: PersonagensItem){
+       if(x.ancestry != ""){
+           binding.tvBlood.setText(x.ancestry)
+       }else{
+           binding.tvBlood.text = "Não localizado"
+       }
     }
 
     private fun replaceFragment(fragment: Fragment) {

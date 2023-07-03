@@ -71,7 +71,7 @@ class AdapterHome : ListAdapter<PersonagensItem, AdapterHome.ViewHolder>(DIFF_CA
                     .into(binding.imagePeople)
             } else {
                 Glide.with(binding.root.context)
-                    .load(R.drawable.bruxonaoidentificado)
+                    .load(R.drawable.sem_foto)
                     .into(binding.imagePeople)
             }
         }

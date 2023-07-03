@@ -23,7 +23,7 @@ class AdapterLufaLufa : ListAdapter<PersonagensItem, AdapterLufaLufa.ViewHolder>
             binding.tvNameMembrer.text = x.name
             findPatrono(x)
             findAncestral(x)
-            findHouse(x)
+            //findHouse(x)
             findFavorite(x)
             setImage(x)
 
@@ -63,7 +63,7 @@ class AdapterLufaLufa : ListAdapter<PersonagensItem, AdapterLufaLufa.ViewHolder>
                     .into(binding.imageMembrer)
             } else {
                 Glide.with(binding.root.context)
-                    .load(R.drawable.bruxonaoidentificado)
+                    .load(R.drawable.sem_foto)
                     .into(binding.imageMembrer)
             }
         }
@@ -72,7 +72,7 @@ class AdapterLufaLufa : ListAdapter<PersonagensItem, AdapterLufaLufa.ViewHolder>
             if (x.ancestry != "") {
                 binding.tvAncestry.text = "Ancestral: " + x.ancestry
             } else {
-                binding.tvAncestry.text = "Ancestral não encontrado"
+                binding.tvAncestry.text = "Ancestral: Não encontrado"
             }
         }
 
@@ -88,7 +88,7 @@ class AdapterLufaLufa : ListAdapter<PersonagensItem, AdapterLufaLufa.ViewHolder>
             if (x.patronus != "") {
                 binding.tvPatronus.text = "Patrono: " + x.patronus
             } else {
-                binding.tvPatronus.text = "Patrono não encontrado"
+                binding.tvPatronus.text = "Patrono: Não encontrado"
             }
         }
     }

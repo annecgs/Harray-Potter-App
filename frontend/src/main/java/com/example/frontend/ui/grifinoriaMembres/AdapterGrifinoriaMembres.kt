@@ -25,7 +25,7 @@ class AdapterGrifinoriaMembres : ListAdapter<PersonagensItem, AdapterGrifinoriaM
             binding.tvNameMembrer.text = x.name
             findAncestral(x)
             findPatrono(x)
-            findHouse(x)
+            //findHouse(x)
             findFavorite(x)
             setImage(x)
 
@@ -65,7 +65,7 @@ class AdapterGrifinoriaMembres : ListAdapter<PersonagensItem, AdapterGrifinoriaM
                     .into(binding.imageMembrer)
             } else {
                 Glide.with(binding.root.context)
-                    .load(R.drawable.bruxonaoidentificado)
+                    .load(R.drawable.sem_foto)
                     .into(binding.imageMembrer)
             }
         }
@@ -82,7 +82,7 @@ class AdapterGrifinoriaMembres : ListAdapter<PersonagensItem, AdapterGrifinoriaM
             if (x.ancestry != "") {
                 binding.tvAncestry.text = "Ancestral: " + x.ancestry
             } else {
-                binding.tvAncestry.text = "Ancestral não encontrado"
+                binding.tvAncestry.text = "Ancestral: Não encontrado"
             }
         }
 
@@ -90,7 +90,7 @@ class AdapterGrifinoriaMembres : ListAdapter<PersonagensItem, AdapterGrifinoriaM
             if (x.patronus != "") {
                 binding.tvPatronus.text = "Patrono: " + x.patronus
             } else {
-                binding.tvPatronus.text = "Patrono não encontrado"
+                binding.tvPatronus.text = "Patrono: Não encontrado"
             }
         }
     }

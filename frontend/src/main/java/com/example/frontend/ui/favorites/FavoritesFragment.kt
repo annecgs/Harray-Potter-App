@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.backend.data.remote.dto.PersonagemApiResult
 import com.example.backend.data.remote.dto.PersonagensItem
 import com.example.frontend.R
@@ -16,8 +18,6 @@ import com.example.frontend.ui.error.ErrorFragment
 import com.example.frontend.ui.home.InfoFragment
 import com.example.frontend.ui.viewModel.MainViewModel
 import com.example.frontend.utils.Helpers
-import kotlinx.android.synthetic.main.fragment_error.view.*
-import kotlinx.android.synthetic.main.layout_header.view.*
 
 class FavoritesFragment : Fragment() {
     private val viewModel: MainViewModel by activityViewModels { Helpers.getMainViewModelFactory() }
@@ -41,12 +41,12 @@ class FavoritesFragment : Fragment() {
 
     private fun setupAdapter() {
         adapter = AdapterFavoritos()
-        binding.recyclerViewFavorites.adapter = adapter
+        //binding.recyclerViewFavorites.adapter = adapter
 
-        // val layoutManager = GridLayoutManager(activity, 2)
-        // layoutManager.orientation = RecyclerView.VERTICAL
-        // binding.rvGrifinioriaMembres.layoutManager = layoutManager
-        // binding.rvGrifinioriaMembres.adapter = adapter
+         val layoutManager = GridLayoutManager(activity, 2)
+         layoutManager.orientation = RecyclerView.VERTICAL
+         binding.recyclerViewFavorites.layoutManager = layoutManager
+         binding.recyclerViewFavorites.adapter = adapter
 
         viewModel.personagemItem.observe(viewLifecycleOwner) { listPersonagens ->
             getFavoritos(listPersonagens)
@@ -113,7 +113,6 @@ class FavoritesFragment : Fragment() {
                 errorFragment = ErrorFragment()
                 replaceFragment(ErrorFragment())
                 binding.recyclerViewFavorites.visibility = View.GONE
-                binding.includeHeader.imageHogwarts.visibility = View.GONE
                 binding.serchView.visibility = View.GONE
                 binding.includeDivider.root.visibility = View.GONE
                 binding.tvNoFavorites.visibility = View.GONE

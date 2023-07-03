@@ -55,8 +55,8 @@
 
             <ImageView
                 android:id="@+id/casa"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 app:layout_constraintBottom_toBottomOf="@+id/imagePeople"
                 app:layout_constraintEnd_toEndOf="@+id/imagePeople"
                 app:layout_constraintHorizontal_bias="0.800"
@@ -67,8 +67,8 @@
 
             <ImageView
                 android:id="@+id/iv_favoriteItem"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 android:layout_marginTop="5dp"
                 android:contentDescription="@string/simbolo_favorito"
                 android:visibility="gone"
@@ -78,7 +78,7 @@
                 app:layout_constraintStart_toStartOf="@+id/imagePeople"
                 app:layout_constraintTop_toTopOf="@+id/imagePeople"
                 app:layout_constraintVertical_bias="0.007"
-                app:srcCompat="@drawable/iconstar"
+                app:srcCompat="@drawable/favorito_on"
                 tools:visibility="visible" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
