@@ -27,13 +27,12 @@ class OnboardingActivity : AppCompatActivity() {
         viewPager = findViewById(R.id.idViewPager)
 
         imageList = ArrayList<Int>()
-        imageList = imageList + R.drawable.onboading_01_1
+        imageList = imageList + R.drawable.onboading_01_2
         imageList = imageList + R.drawable.onboading_02
         imageList = imageList + R.drawable.onboading_03
         imageList = imageList + R.drawable.onboading_04
 
         viewPagerAdapter = ViewPagerAdapter(this@OnboardingActivity, imageList)
-
         viewPager.adapter = viewPagerAdapter
 
 
