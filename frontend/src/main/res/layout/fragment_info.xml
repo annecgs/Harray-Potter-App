@@ -427,7 +427,7 @@
             android:id="@+id/card_my_house"
             android:layout_width="160dp"
             android:layout_height="130dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
             android:visibility="visible"
@@ -460,7 +460,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btn_addFavorite"
                         android:layout_width="90dp"
                         android:layout_height="40dp"

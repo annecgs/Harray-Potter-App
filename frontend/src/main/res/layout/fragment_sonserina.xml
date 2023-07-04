@@ -76,7 +76,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSonserinaMembres"
-        android:layout_width="match_parent"
+        android:layout_width="330dp"
         android:layout_height="404dp"
         android:background="#191919"
         android:scrollbars="vertical"
