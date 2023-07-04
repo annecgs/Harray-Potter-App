@@ -43,6 +43,7 @@
         android:layout_height="48dp"
         android:layout_marginEnd="10dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/bg_search_view"
         android:hint="Digite um nome"
         android:label="App Harry Potter"
@@ -89,58 +90,18 @@
         app:layout_constraintTop_toBottomOf="@+id/includeDivider"
         tools:listitem="@layout/people_item" />
 
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:visibility="gone"
         android:clickable="true"
-        android:src="@drawable/ic_baseline_keyboard_arrow_up_24"
+        android:src="@drawable/baseline_keyboard_double_arrow_up_24"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/widgetListEmpty"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:backgroundTint="@android:color/transparent"
-        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView">
-
-        <ImageView
-            android:id="@+id/widgetListEmptyImage"
-            android:layout_width="284dp"
-            android:layout_height="269dp"
-            android:layout_marginBottom="15dp"
-            android:paddingHorizontal="44dp"
-            android:scaleType="fitStart"
-            android:src="@drawable/list_is_empty"
-            android:contentDescription="Imagem lista vazia"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
-
-        <TextView
-            android:id="@+id/tvNoFavorites"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/bg_button"
-            android:backgroundTint="#CC9EA96D"
-            android:padding="12dp"
-            android:text="Membro não localizado ;("
-            app:layout_constraintBottom_toBottomOf="@+id/widgetListEmptyImage"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.56"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/includeDivider"
-            app:layout_constraintVertical_bias="0.877"
-            tools:ignore="NotSibling" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:tint="@android:color/white"/>
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -150,6 +111,4 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

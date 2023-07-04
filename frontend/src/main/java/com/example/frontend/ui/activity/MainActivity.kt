@@ -3,7 +3,6 @@ package com.example.frontend.ui.activity
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
-import android.view.Menu
 import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
@@ -16,7 +15,6 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.frontend.R
 import com.example.frontend.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
-import kotlinx.android.synthetic.main.app_bar_main.view.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -48,11 +46,12 @@ class MainActivity : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home,
-                R.id.nav_gallery,
-                R.id.nav_slideshow,
+                R.id.nav_hogwarts,
+                R.id.nav_griffindor,
+                R.id.nav_corvinal,
                 R.id.nav_lufalufa,
-                R.id.nav_sonserina
+                R.id.nav_sonserina,
+                R.id.nav_deteals
             ),
             drawerLayout
         )

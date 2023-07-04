@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
@@ -33,7 +34,7 @@ class FavoritesFragment : Fragment() {
     ): View? {
         _binding = FragmentFavoritesBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
+        //(activity as AppCompatActivity).supportActionBar?.title?.get(R.string.menu_favoritos)
         setupAdapter()
 
         return root
@@ -74,14 +75,16 @@ class FavoritesFragment : Fragment() {
     private fun setlistQueryAdapter(newList: MutableList<PersonagensItem>) {
         if (newList.isNotEmpty()) {
             setListAdapter(newList)
-            binding.widgetListEmpty.visibility = View.GONE
+            binding.cardEmpty.empty.visibility = View.GONE
             binding.recyclerViewFavorites.visibility = View.VISIBLE
             binding.includeDivider.root.visibility = View.VISIBLE
+            binding.cardView.visibility = View.VISIBLE
+
         } else {
             binding.recyclerViewFavorites.visibility = View.GONE
             binding.includeDivider.root.visibility = View.GONE
-            binding.widgetListEmpty.visibility = View.VISIBLE
-            binding.tvNoFavorites.visibility = View.VISIBLE
+            binding.cardEmpty.empty.visibility = View.VISIBLE
+            binding.cardView.visibility = View.GONE
         }
     }
 
@@ -93,7 +96,7 @@ class FavoritesFragment : Fragment() {
     private fun getFavoritos(list: PersonagemApiResult<List<PersonagensItem>>) {
         val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
         Log.d("ListFavorites", "getFavorites: ${sharedPref.all}")
-        if (sharedPref.all.isEmpty()) binding.tvNoFavorites.visibility = View.VISIBLE else binding.tvNoFavorites.visibility = View.GONE
+        if (sharedPref.all.isEmpty()) binding.cardEmpty.empty.visibility = View.VISIBLE else binding.cardEmpty.empty.visibility = View.GONE
         val tempList: MutableList<PersonagensItem> = ArrayList()
         when (list) {
             is PersonagemApiResult.Success -> {
@@ -103,8 +106,7 @@ class FavoritesFragment : Fragment() {
                     }
                 }
                 if (tempList.isNotEmpty()) {
-                    binding.tvNoFavorites.visibility = View.GONE
-                    binding.widgetListEmpty.visibility = View.GONE
+                    binding.cardEmpty.empty.visibility = View.GONE
                 }
                 setupSearchView(tempList as List<PersonagensItem>)
             }
@@ -115,8 +117,8 @@ class FavoritesFragment : Fragment() {
                 binding.recyclerViewFavorites.visibility = View.GONE
                 binding.serchView.visibility = View.GONE
                 binding.includeDivider.root.visibility = View.GONE
-                binding.tvNoFavorites.visibility = View.GONE
-                binding.widgetListEmpty.visibility = View.GONE
+                binding.cardEmpty.empty.visibility = View.GONE
+                binding.cardView.visibility = View.VISIBLE
             }
         }
 

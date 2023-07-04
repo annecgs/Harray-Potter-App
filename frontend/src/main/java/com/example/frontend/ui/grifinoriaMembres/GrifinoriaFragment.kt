@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
@@ -34,7 +35,7 @@ class GrifinoriaFragment : Fragment() {
 
         _binding = FragmentGrifinoriaBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
+        //(activity as AppCompatActivity).supportActionBar?.title?.get(R.string.menu_griffindor)
         setupAdapter()
 
         return root
@@ -76,15 +77,15 @@ class GrifinoriaFragment : Fragment() {
     private fun setlistQueryAdapter(newList: MutableList<PersonagensItem>) {
         if (newList.isNotEmpty()) {
             setListAdapter(newList)
-            binding.widgetListEmpty.visibility = View.GONE
-            binding.tvNoFavorites.visibility = View.GONE
+            //binding.widgetListEmpty.visibility = View.GONE
+            //binding.tvNoFavorites.visibility = View.GONE
             binding.rvGrifinoriaMembres.visibility = View.VISIBLE
             binding.includeDivider.root.visibility = View.VISIBLE
         } else {
             binding.rvGrifinoriaMembres.visibility = View.GONE
             binding.includeDivider.root.visibility = View.GONE
-            binding.tvNoFavorites.visibility = View.VISIBLE
-            binding.widgetListEmpty.visibility = View.VISIBLE
+            //binding.tvNoFavorites.visibility = View.VISIBLE
+            //binding.widgetListEmpty.visibility = View.VISIBLE
         }
     }
 
@@ -103,8 +104,8 @@ class GrifinoriaFragment : Fragment() {
                     }
                 }
                 if (tempList.isNotEmpty()) {
-                    binding.tvNoFavorites.visibility = View.GONE
-                    binding.widgetListEmpty.visibility = View.GONE
+                    //binding.tvNoFavorites.visibility = View.GONE
+                    //binding.widgetListEmpty.visibility = View.GONE
                 }
                 setupSearchView(tempList as List<PersonagensItem>)
             }
@@ -116,8 +117,8 @@ class GrifinoriaFragment : Fragment() {
                 binding.includeHeader.imageHouseGrifinoria.visibility = View.GONE
                 binding.serchView.visibility = View.GONE
                 binding.includeDivider.root.visibility = View.GONE
-                binding.tvNoFavorites.visibility = View.GONE
-                binding.widgetListEmpty.visibility = View.GONE
+                //binding.tvNoFavorites.visibility = View.GONE
+                //binding.widgetListEmpty.visibility = View.GONE
             }
         }
 

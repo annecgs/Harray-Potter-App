@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
@@ -36,7 +37,7 @@ class SonserinaFragment : Fragment() {
     ): View? {
         _binding = FragmentSonserinaBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
+        //(activity as AppCompatActivity).supportActionBar?.title?.get(R.string.menu_slytherin)
         setupAdapter()
 
         return root
@@ -78,14 +79,14 @@ class SonserinaFragment : Fragment() {
     private fun setlistQueryAdapter(newList: MutableList<PersonagensItem>) {
         if (newList.isNotEmpty()) {
             setListAdapter(newList)
-            binding.widgetListEmpty.visibility = View.GONE
+            //binding.widgetListEmpty.visibility = View.GONE
             binding.rvSonserinaMembres.visibility = View.VISIBLE
             binding.includeDivider.root.visibility = View.VISIBLE
         } else {
             binding.rvSonserinaMembres.visibility = View.GONE
             binding.includeDivider.root.visibility = View.GONE
-            binding.widgetListEmpty.visibility = View.VISIBLE
-            binding.tvNoFavorites.visibility = View.VISIBLE
+            //binding.widgetListEmpty.visibility = View.VISIBLE
+            //binding.tvNoFavorites.visibility = View.VISIBLE
         }
     }
 
@@ -104,8 +105,8 @@ class SonserinaFragment : Fragment() {
                     }
                 }
                 if (tempList.isNotEmpty()) {
-                    binding.tvNoFavorites.visibility = View.GONE
-                    binding.widgetListEmpty.visibility = View.GONE
+                    //binding.tvNoFavorites.visibility = View.GONE
+                    //binding.widgetListEmpty.visibility = View.GONE
                 }
                 setupSearchView(tempList as List<PersonagensItem>)
             }
@@ -117,8 +118,8 @@ class SonserinaFragment : Fragment() {
                 binding.includeHeader.imageHouseSonserina.visibility = View.GONE
                 binding.serchView.visibility = View.GONE
                 binding.includeDivider.root.visibility = View.GONE
-                binding.tvNoFavorites.visibility = View.GONE
-                binding.widgetListEmpty.visibility = View.GONE
+                //binding.tvNoFavorites.visibility = View.GONE
+                //binding.widgetListEmpty.visibility = View.GONE
             }
         }
 

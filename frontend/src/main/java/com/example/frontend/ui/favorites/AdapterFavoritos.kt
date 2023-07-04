@@ -21,9 +21,6 @@ class AdapterFavoritos : ListAdapter<PersonagensItem, AdapterFavoritos.ViewHolde
 
         fun bind(x: PersonagensItem) {
             binding.tvNameMembrer.text = x.name
-            findPatrono(x)
-            findAncestral(x)
-            findHouse(x)
             findFavorite(x)
             setImage(x)
 
@@ -32,29 +29,7 @@ class AdapterFavoritos : ListAdapter<PersonagensItem, AdapterFavoritos.ViewHolde
             }
         }
 
-        private fun findHouse(x: PersonagensItem) {
-            if (x.house == "Gryffindor") {
-                Glide.with(binding.root.context)
-                    .load(R.drawable.grifinoria)
-                    .into(binding.simbolHouse)
-            } else if (x.house == "Hufflepuff") {
-                Glide.with(binding.root.context)
-                    .load(R.drawable.lufalufa)
-                    .into(binding.simbolHouse)
-            } else if (x.house == "Ravenclaw") {
-                Glide.with(binding.root.context)
-                    .load(R.drawable.corvinal)
-                    .into(binding.simbolHouse)
-            } else if (x.house == "Slytherin") {
-                Glide.with(binding.root.context)
-                    .load(R.drawable.sonserina)
-                    .into(binding.simbolHouse)
-            } else {
-                Glide.with(binding.root.context)
-                    .load(R.drawable.casanaodefinida)
-                    .into(binding.simbolHouse)
-            }
-        }
+
 
         private fun setImage(x: PersonagensItem) {
             if (x.image != "") {
@@ -68,27 +43,11 @@ class AdapterFavoritos : ListAdapter<PersonagensItem, AdapterFavoritos.ViewHolde
             }
         }
 
-        private fun findAncestral(x: PersonagensItem) {
-            if (x.ancestry != "") {
-                binding.tvAncestry.text = "Ancestral: " + x.ancestry
-            } else {
-                binding.tvAncestry.text = "Ancestral não encontrado"
-            }
-        }
-
-        private fun findPatrono(x: PersonagensItem) {
-            if (x.patronus != "") {
-                binding.tvPatronus.text = "Patrono: " + x.patronus
-            } else {
-                binding.tvPatronus.text = "Patrono não encontrado"
-            }
-        }
-
         private fun findFavorite(x: PersonagensItem) {
             if (x.isFavorite) {
-                binding.imageView3.visibility = View.VISIBLE
+                binding.imageView3.setImageResource(R.drawable.favorito_on)
             } else {
-                binding.imageView3.visibility = View.GONE
+                binding.imageView3.setImageResource(R.drawable.favorito_off)
             }
         }
     }

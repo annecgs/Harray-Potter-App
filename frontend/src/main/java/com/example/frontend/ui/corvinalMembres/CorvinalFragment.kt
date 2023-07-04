@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -36,7 +37,7 @@ class CorvinalFragment : Fragment() {
 
         _binding = FragmentCorvinalBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
+        //(activity as AppCompatActivity).supportActionBar?.title?.get(R.string.menu_ravenclaw)
         setupAdapter()
 
         return root
@@ -80,14 +81,14 @@ class CorvinalFragment : Fragment() {
     private fun setlistQueryAdapter(newList: MutableList<PersonagensItem>) {
         if (newList.isNotEmpty()) {
             setListAdapter(newList)
-            binding.widgetListEmpty.visibility = View.GONE
+            //binding.widgetListEmpty.visibility = View.GONE
             binding.rvCorvinalMembres.visibility = View.VISIBLE
             binding.includeDivider.root.visibility = View.VISIBLE
         } else {
             binding.rvCorvinalMembres.visibility = View.GONE
             binding.includeDivider.root.visibility = View.GONE
-            binding.widgetListEmpty.visibility = View.VISIBLE
-            binding.tvNoFavorites.visibility = View.VISIBLE
+            //binding.widgetListEmpty.visibility = View.VISIBLE
+            //binding.tvNoFavorites.visibility = View.VISIBLE
         }
     }
 
@@ -106,8 +107,8 @@ class CorvinalFragment : Fragment() {
                     }
                 }
                 if (tempList.isNotEmpty()) {
-                    binding.tvNoFavorites.visibility = View.GONE
-                    binding.widgetListEmpty.visibility = View.GONE
+                    //binding.tvNoFavorites.visibility = View.GONE
+                    //binding.widgetListEmpty.visibility = View.GONE
                 }
                 setupSearchView(tempList as List<PersonagensItem>)
             }
@@ -119,8 +120,8 @@ class CorvinalFragment : Fragment() {
                 binding.includeHeader.imageHouseCorvinal.visibility = View.GONE
                 binding.serchView.visibility = View.GONE
                 binding.includeDivider.root.visibility = View.GONE
-                binding.tvNoFavorites.visibility = View.GONE
-                binding.widgetListEmpty.visibility = View.GONE
+                //binding.tvNoFavorites.visibility = View.GONE
+                //binding.widgetListEmpty.visibility = View.GONE
             }
         }
 

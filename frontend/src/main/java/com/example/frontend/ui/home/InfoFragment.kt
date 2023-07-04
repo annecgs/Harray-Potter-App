@@ -6,6 +6,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toolbar
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.bumptech.glide.Glide
@@ -29,7 +31,6 @@ class InfoFragment : Fragment() {
         _binding = FragmentInfoBinding.inflate(inflater, container, false)
         val view = binding.root
         setupAdapter()
-
         binding.btnReturn.setOnClickListener {
             getActivity()?.onBackPressed()
         }
@@ -38,7 +39,6 @@ class InfoFragment : Fragment() {
     }
 
     private fun setupAdapter() {
-
         getData()
     }
 
@@ -46,11 +46,11 @@ class InfoFragment : Fragment() {
         viewModel.personagemSelected.observe(viewLifecycleOwner) { personagem ->
             val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return@observe
             if (sharedPref.all.containsKey(personagem.name)) {
-                binding.ivFavorite.setImageResource(R.drawable.favorito_on)
                 binding.btnAddFavorite.text = "REMOVER"
+                verifyFavorite(personagem)
             } else {
-                binding.ivFavorite.setImageResource(R.drawable.favorito_off)
                 binding.btnAddFavorite.text = "ADICIONAR"
+                verifyFavorite(personagem)
             }
 
             Log.d("PersonagemRecive", "onActivityCreated: $personagem")
@@ -61,6 +61,7 @@ class InfoFragment : Fragment() {
             dataNascimento(personagem)
             setAncestry(personagem)
             setPatrono(personagem)
+            //getName(personagem)
 
             binding.btnAddFavorite.setOnClickListener {
                 Log.d("Personagem:", "getData: $personagem")
@@ -69,16 +70,25 @@ class InfoFragment : Fragment() {
                         sharedPref.edit().remove(personagem.name).apply()
                         viewModel.setFavorite(false)
                         binding.btnAddFavorite.text = "ADICIONAR"
-                        binding.ivFavorite.setImageResource(R.drawable.favorito_on)
+                        verifyFavorite(personagem)
+
                     }
                     false -> { // Vai adicionar aos favoritos
                         sharedPref.edit().putString(personagem.name, personagem.name).apply()
                         viewModel.setFavorite(true)
                         binding.btnAddFavorite.text = "REMOVER"
-                        binding.ivFavorite.setImageResource(R.drawable.favorito_off)
+                        verifyFavorite(personagem)
                     }
                 }
             }
+        }
+    }
+
+    private fun verifyFavorite(x: PersonagensItem){
+        if(x.isFavorite){
+            binding.ivFavorite.setImageResource(R.drawable.favorito_on)
+        } else{
+            binding.ivFavorite.setImageResource(R.drawable.favorito_off)
         }
     }
 
@@ -88,6 +98,10 @@ class InfoFragment : Fragment() {
         } else {
             binding.tvDataNascimento.text = "Não informado"
         }
+    }
+
+    private fun getName(x: PersonagensItem){
+        (activity as AppCompatActivity).supportActionBar?.title = x.name
     }
 
     private fun genero(x: PersonagensItem) {

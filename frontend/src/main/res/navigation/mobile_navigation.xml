@@ -3,36 +3,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_hogwarts">
 
     <fragment
-        android:id="@+id/nav_home"
+        android:id="@+id/nav_hogwarts"
         android:name="com.example.frontend.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_griffindor"
         android:name="com.example.frontend.ui.grifinoriaMembres.GrifinoriaFragment"
-        android:label="@string/menu_gallery"
+        android:label="@string/menu_griffindor"
         tools:layout="@layout/fragment_grifinoria" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_corvinal"
         android:name="com.example.frontend.ui.corvinalMembres.CorvinalFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/menu_ravenclaw"
         tools:layout="@layout/fragment_corvinal" />
 
     <fragment
         android:id="@+id/nav_lufalufa"
         android:name="com.example.frontend.ui.lufalufaMembres.LufaLufaFragment"
-        android:label="@string/menu_lufalufa"
+        android:label="@string/menu_hufflepuff"
         tools:layout="@layout/fragment_lufa_lufa"/>
 
     <fragment
         android:id="@+id/nav_sonserina"
         android:name="com.example.frontend.ui.sonserinaMembres.SonserinaFragment"
-        android:label="@string/menu_sonserina"
+        android:label="@string/menu_slytherin"
         tools:layout="@layout/fragment_sonserina"/>
 
     <fragment
@@ -40,4 +40,10 @@
         android:name="com.example.frontend.ui.favorites.FavoritesFragment"
         android:label="@string/menu_favoritos"
         tools:layout="@layout/fragment_favorites"/>
+
+    <fragment
+        android:id="@+id/nav_deteals"
+        android:name="com.example.frontend.ui.home.InfoFragment"
+        tools:layout="@layout/fragment_info"
+        android:label="Details"/>
 </navigation>

@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -36,6 +37,7 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
         setupUi()
+        //(activity as AppCompatActivity).supportActionBar?.title?.get(R.string.menu_home)
         return root
     }
 
@@ -75,16 +77,16 @@ class HomeFragment : Fragment() {
     private fun setlistQueryAdapter(newList: MutableList<PersonagensItem>) {
         if (newList.isNotEmpty()) {
             setListAdapter(newList)
-            binding.widgetListEmpty.visibility = View.GONE
+            //binding.widgetListEmpty.visibility = View.GONE
             binding.rvHome.visibility = View.VISIBLE
             binding.includeDivider.root.visibility = View.VISIBLE
             binding.progressBar.visibility = View.GONE
         } else {
             binding.rvHome.visibility = View.GONE
             binding.includeDivider.root.visibility = View.GONE
-            binding.widgetListEmpty.visibility = View.VISIBLE
+            //binding.widgetListEmpty.visibility = View.VISIBLE
             binding.progressBar.visibility = View.GONE
-            binding.tvNoFavorites.visibility = View.VISIBLE
+            //binding.tvNoFavorites.visibility = View.VISIBLE
         }
     }
 

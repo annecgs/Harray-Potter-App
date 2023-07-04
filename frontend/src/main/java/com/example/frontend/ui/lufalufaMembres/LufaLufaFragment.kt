@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
@@ -33,7 +34,7 @@ class LufaLufaFragment : Fragment() {
     ): View? {
         _binding = FragmentLufaLufaBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
+        //(activity as AppCompatActivity).supportActionBar?.title?.get(R.string.menu_hufflepuff)
         setupAdapter()
 
         return root
@@ -77,14 +78,14 @@ class LufaLufaFragment : Fragment() {
     private fun setlistQueryAdapter(newList: MutableList<PersonagensItem>) {
         if (newList.isNotEmpty()) {
             setListAdapter(newList)
-            binding.widgetListEmpty.visibility = View.GONE
+            //binding.widgetListEmpty.visibility = View.GONE
             binding.rvLufalufaMembres.visibility = View.VISIBLE
             binding.includeDivider.root.visibility = View.VISIBLE
         } else {
             binding.rvLufalufaMembres.visibility = View.GONE
             binding.includeDivider.root.visibility = View.GONE
-            binding.widgetListEmpty.visibility = View.VISIBLE
-            binding.tvNoFavorites.visibility = View.VISIBLE
+            //binding.widgetListEmpty.visibility = View.VISIBLE
+            //binding.tvNoFavorites.visibility = View.VISIBLE
         }
     }
 
@@ -103,8 +104,8 @@ class LufaLufaFragment : Fragment() {
                     }
                 }
                 if (tempList.isNotEmpty()) {
-                    binding.tvNoFavorites.visibility = View.GONE
-                    binding.widgetListEmpty.visibility = View.GONE
+                    //binding.tvNoFavorites.visibility = View.GONE
+                    //binding.widgetListEmpty.visibility = View.GONE
                 }
                 setupSearchView(tempList as List<PersonagensItem>)
             }
@@ -116,8 +117,8 @@ class LufaLufaFragment : Fragment() {
                 binding.includeHeader.imageHouseLufaLufa.visibility = View.GONE
                 binding.serchView.visibility = View.GONE
                 binding.includeDivider.root.visibility = View.GONE
-                binding.tvNoFavorites.visibility = View.GONE
-                binding.widgetListEmpty.visibility = View.GONE
+                //binding.tvNoFavorites.visibility = View.GONE
+                //binding.widgetListEmpty.visibility = View.GONE
             }
         }
 

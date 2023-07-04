@@ -37,7 +37,7 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/nav_hogwarts"
             app:showAsAction="always"
             app:actionLayout="@layout/item_menu_hogwarts"
             tools:ignore="MenuTitle" />
@@ -45,7 +45,7 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_griffindor"
             app:showAsAction="always"
             app:actionLayout="@layout/item_menu_grifinoria"
             tools:ignore="MenuTitle" />
@@ -53,7 +53,7 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_corvinal"
             app:showAsAction="always"
             app:actionLayout="@layout/item_menu_corvinal"
             tools:ignore="MenuTitle" />
