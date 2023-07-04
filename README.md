@@ -1,6 +1,4 @@
 # App Harray Potter
-
-![Badge](https://visitor-counter-badge.vercel.app/api/annecgs/Harray-Potter-App/visitor-counter-badge/?label=Visitor&color=363636&labelColor=4682B4)
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 <p>Projeto pessoal desenvolvido para fins de estudo de mobile com aplicação da linguagem kotlin</p>
 
