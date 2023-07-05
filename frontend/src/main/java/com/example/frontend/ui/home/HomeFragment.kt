@@ -8,29 +8,31 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.backend.data.remote.dto.PersonagemApiResult
 import com.example.backend.data.remote.dto.PersonagensItem
 import com.example.frontend.R
 import com.example.frontend.databinding.FragmentHomeBinding
+import com.example.frontend.ui.activity.MainActivity
 import com.example.frontend.ui.error.ErrorFragment
 import com.example.frontend.ui.viewModel.MainViewModel
 import com.example.frontend.utils.Helpers
 import kotlinx.android.synthetic.main.layout_header.view.*
 
-class HomeFragment : Fragment() {
+class HomeFragment: Fragment() {
     private val viewModel: MainViewModel by activityViewModels() { Helpers.getMainViewModelFactory() }
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private lateinit var adapterHome: AdapterHome
     private lateinit var errorFragment: ErrorFragment
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -39,7 +41,10 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
         setupUi()
-        //(activity as AppCompatActivity).supportActionBar?.title?.get(R.string.menu_home)
+
+        if(valueReturn == 1){
+            (activity as MainActivity?)!!.configMenu()
+        }
 
         if (Build.VERSION.SDK_INT >= 21) {
             val window = (activity as AppCompatActivity).window
@@ -181,5 +186,9 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    companion object {
+        var valueReturn: Int = 0
     }
 }

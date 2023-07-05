@@ -1,11 +1,16 @@
 package com.example.frontend.ui.activity
 
+import android.content.DialogInterface
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
+import android.widget.Toolbar
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -59,12 +64,71 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_corvinal,
                 R.id.nav_lufalufa,
                 R.id.nav_sonserina,
-                R.id.nav_favoritos
+                R.id.nav_favoritos,
+                R.id.nav_logout
             ),
             drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        navView.setNavigationItemSelectedListener(NavigationView.OnNavigationItemSelectedListener { menuItem ->
+            val id = menuItem.itemId
+
+            if(id == R.id.nav_logout){
+                //configAlertDiolog()
+                finish()
+            }
+
+            true
+        })
+    }
+
+    @RequiresApi(Build.VERSION_CODES.M)
+    fun returnDetails(name: String){
+        setSupportActionBar(findViewById(R.id.toolbar))
+        val toolbar = findViewById<Toolbar>(R.id.toolbar) as androidx.appcompat.widget.Toolbar
+        if(toolbar != null){
+            setSupportActionBar(toolbar)
+            toolbar.setTitleTextColor(applicationContext.getColor(R.color.white))
+            toolbar.title = name
+            toolbar.setNavigationIcon(R.drawable.baseline_keyboard_arrow_left_24)
+            toolbar.setNavigationOnClickListener(View.OnClickListener { onBackPressed() })
+        }
+    }
+
+    @RequiresApi(Build.VERSION_CODES.M)
+    fun configMenu(){
+        setSupportActionBar(findViewById(R.id.toolbar))
+        val toolbar = findViewById<Toolbar>(R.id.toolbar) as androidx.appcompat.widget.Toolbar
+        if(toolbar != null){
+            setSupportActionBar(toolbar)
+            toolbar.setTitleTextColor(applicationContext.getColor(R.color.white))
+            toolbar.setNavigationIcon(R.drawable.baseline_menu_24)
+            toolbar.setNavigationOnClickListener(View.OnClickListener {openDrawer()})
+        }
+    }
+
+    fun openDrawer(){
+        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
+        drawerLayout.openDrawer(GravityCompat.START)
+    }
+
+    private fun configAlertDiolog(){
+        val alertDialog: AlertDialog? = applicationContext?.let {
+            val builder = AlertDialog.Builder(it)
+            builder.apply {
+                setPositiveButton("Sim",
+                    DialogInterface.OnClickListener { dialog, id ->
+                        finish()
+                    })
+                setNegativeButton("Não",
+                    DialogInterface.OnClickListener { dialog, id ->
+                        dialog.dismiss()
+                    })
+            }
+            builder.create()
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

@@ -7,7 +7,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toolbar
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -16,6 +15,8 @@ import com.bumptech.glide.Glide
 import com.example.backend.data.remote.dto.PersonagensItem
 import com.example.frontend.R
 import com.example.frontend.databinding.FragmentInfoBinding
+import com.example.frontend.ui.activity.MainActivity
+import com.example.frontend.ui.home.HomeFragment.Companion.valueReturn
 import com.example.frontend.ui.viewModel.MainViewModel
 import com.example.frontend.utils.Helpers
 
@@ -34,9 +35,10 @@ class InfoFragment : Fragment() {
         _binding = FragmentInfoBinding.inflate(inflater, container, false)
         val view = binding.root
         setupAdapter()
-        binding.btnReturn.setOnClickListener {
-            getActivity()?.onBackPressed()
-        }
+
+        (activity as MainActivity?)!!.returnDetails("Details")
+
+        valueReturn = 1
 
         return view
     }
@@ -66,7 +68,6 @@ class InfoFragment : Fragment() {
             dataNascimento(personagem)
             setAncestry(personagem)
             setPatrono(personagem)
-            //getName(personagem)
 
             binding.btnAddFavorite.setOnClickListener {
                 Log.d("Personagem:", "getData: $personagem")
@@ -227,4 +228,6 @@ class InfoFragment : Fragment() {
         super.onDestroy()
         _binding = null
     }
+
+
 }

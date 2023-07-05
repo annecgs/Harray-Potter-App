@@ -1,10 +1,12 @@
 package com.example.frontend.ui.corvinalMembres
 
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
@@ -15,6 +17,7 @@ import com.example.backend.data.remote.dto.PersonagemApiResult
 import com.example.backend.data.remote.dto.PersonagensItem
 import com.example.frontend.R
 import com.example.frontend.databinding.FragmentCorvinalBinding
+import com.example.frontend.ui.activity.MainActivity
 import com.example.frontend.ui.error.ErrorFragment
 import com.example.frontend.ui.home.InfoFragment
 import com.example.frontend.ui.viewModel.MainViewModel
@@ -29,6 +32,7 @@ class CorvinalFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var errorFragment: ErrorFragment
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -39,6 +43,7 @@ class CorvinalFragment : Fragment() {
         val root: View = binding.root
         //(activity as AppCompatActivity).supportActionBar?.title?.get(R.string.menu_ravenclaw)
         setupAdapter()
+        (activity as MainActivity?)!!.configMenu()
 
         return root
     }
