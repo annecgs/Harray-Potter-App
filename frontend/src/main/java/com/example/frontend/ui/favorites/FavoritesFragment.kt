@@ -49,6 +49,18 @@ class FavoritesFragment : Fragment() {
          binding.recyclerViewFavorites.layoutManager = layoutManager
          binding.recyclerViewFavorites.adapter = adapter
 
+        binding.recyclerViewFavorites.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                if (layoutManager.findFirstVisibleItemPosition() == 0) {
+                    binding.fabFavorites.visibility = View.GONE
+                } else binding.fabFavorites.visibility = View.VISIBLE
+            }
+        })
+        binding.fabFavorites.setOnClickListener {
+            binding.recyclerViewFavorites.scrollToPosition(0)
+        }
+
         viewModel.personagemItem.observe(viewLifecycleOwner) { listPersonagens ->
             getFavoritos(listPersonagens)
         }

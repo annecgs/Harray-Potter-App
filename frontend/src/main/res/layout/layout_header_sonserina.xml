@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="#191919">
+    android:background="@color/black">
 
     <ImageView
         android:id="@+id/imageHouseSonserina"

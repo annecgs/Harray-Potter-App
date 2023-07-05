@@ -24,6 +24,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        if (Build.VERSION.SDK_INT >= 21) {
+            val window = this.window
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+            window.statusBarColor = this.resources.getColor(R.color.black)
+        }
+
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -51,7 +59,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_corvinal,
                 R.id.nav_lufalufa,
                 R.id.nav_sonserina,
-                R.id.nav_deteals
+                R.id.nav_favoritos
             ),
             drawerLayout
         )

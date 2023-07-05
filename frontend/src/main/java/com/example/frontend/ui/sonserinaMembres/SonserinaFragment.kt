@@ -52,6 +52,18 @@ class SonserinaFragment : Fragment() {
          binding.rvSonserinaMembres.layoutManager = layoutManager
          binding.rvSonserinaMembres.adapter = adapter
 
+        binding.rvSonserinaMembres.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                if (layoutManager.findFirstVisibleItemPosition() == 0) {
+                    binding.fabSonserina.visibility = View.GONE
+                } else binding.fabSonserina.visibility = View.VISIBLE
+            }
+        })
+        binding.fabSonserina.setOnClickListener {
+            binding.rvSonserinaMembres.scrollToPosition(0)
+        }
+
         viewModel.personagemItem.observe(viewLifecycleOwner) { listPersonagens ->
             getMembresGrifindor(listPersonagens)
         }

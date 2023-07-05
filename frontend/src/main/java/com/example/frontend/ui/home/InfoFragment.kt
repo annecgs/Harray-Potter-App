@@ -1,12 +1,14 @@
 package com.example.frontend.ui.home
 
 import android.content.Context
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toolbar
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -23,6 +25,7 @@ class InfoFragment : Fragment() {
     private var _binding: FragmentInfoBinding? = null
     private val binding get() = _binding!!
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -38,10 +41,12 @@ class InfoFragment : Fragment() {
         return view
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     private fun setupAdapter() {
         getData()
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     private fun getData() {
         viewModel.personagemSelected.observe(viewLifecycleOwner) { personagem ->
             val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return@observe
@@ -93,10 +98,10 @@ class InfoFragment : Fragment() {
     }
 
     private fun dataNascimento(x: PersonagensItem) {
-        if (x.dateOfBirth != "") {
-            binding.tvDataNascimento.text = x.dateOfBirth
-        } else {
+        if (x.dateOfBirth == null) {
             binding.tvDataNascimento.text = "Não informado"
+        } else {
+            binding.tvDataNascimento.text = x.dateOfBirth
         }
     }
 
@@ -142,35 +147,42 @@ class InfoFragment : Fragment() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     private fun findHouse(x: PersonagensItem) {
         if (x.house == "Gryffindor") {
             Glide.with(binding.root.context)
                 .load(R.drawable.grifinoria)
                 .into(binding.casaIcon)
             binding.backgroundHouse.setBackgroundResource(R.drawable.background_grifinoria)
+            binding.imagePeople.borderColor = context?.getColor(R.color.circle_gryffindor)!!
             binding.tvHouse.setText(x.house)
         } else if (x.house == "Hufflepuff") {
             Glide.with(binding.root.context)
                 .load(R.drawable.lufalufa)
                 .into(binding.casaIcon)
             binding.backgroundHouse.setBackgroundResource(R.drawable.background_lufalufa)
+            binding.imagePeople.borderColor = context?.getColor(R.color.circle_hufflepuff)!!
             binding.tvHouse.setText(x.house)
         } else if (x.house == "Ravenclaw") {
             Glide.with(binding.root.context)
                 .load(R.drawable.corvinal)
                 .into(binding.casaIcon)
             binding.backgroundHouse.setBackgroundResource(R.drawable.background_corvinal)
+            binding.imagePeople.borderColor = context?.getColor(R.color.circle_ravenclaw)!!
             binding.tvHouse.setText(x.house)
         } else if (x.house == "Slytherin") {
             Glide.with(binding.root.context)
                 .load(R.drawable.sonserina)
                 .into(binding.casaIcon)
             binding.backgroundHouse.setBackgroundResource(R.drawable.background_sonserina)
+            binding.imagePeople.borderColor = context?.getColor(R.color.circle_slytherin)!!
             binding.tvHouse.setText(x.house)
         } else {
             Glide.with(binding.root.context)
                 .load(R.drawable.casanaodefinida)
                 .into(binding.casaIcon)
+            binding.backgroundHouse.setBackgroundResource(R.drawable.background_marauders_map)
+            binding.imagePeople.borderColor = context?.getColor(R.color.circle_maraudes_map)!!
         }
     }
 

@@ -1,11 +1,13 @@
 package com.example.frontend.ui.home
 
 import android.content.Context
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
@@ -38,6 +40,14 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
         setupUi()
         //(activity as AppCompatActivity).supportActionBar?.title?.get(R.string.menu_home)
+
+        if (Build.VERSION.SDK_INT >= 21) {
+            val window = (activity as AppCompatActivity).window
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+            window.statusBarColor = this.resources.getColor(R.color.black)
+        }
+
         return root
     }
 

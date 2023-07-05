@@ -49,6 +49,18 @@ class LufaLufaFragment : Fragment() {
          binding.rvLufalufaMembres.layoutManager = layoutManager
          binding.rvLufalufaMembres.adapter = adapter
 
+        binding.rvLufalufaMembres.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                if (layoutManager.findFirstVisibleItemPosition() == 0) {
+                    binding.fabLufalufa.visibility = View.GONE
+                } else binding.fabLufalufa.visibility = View.VISIBLE
+            }
+        })
+        binding.fabLufalufa.setOnClickListener {
+            binding.rvLufalufaMembres.scrollToPosition(0)
+        }
+
         viewModel.personagemItem.observe(viewLifecycleOwner) { listPersonagens ->
             getMembresGrifindor(listPersonagens)
         }

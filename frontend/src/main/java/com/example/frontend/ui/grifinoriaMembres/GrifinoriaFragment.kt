@@ -44,11 +44,22 @@ class GrifinoriaFragment : Fragment() {
     private fun setupAdapter() {
         adapter = AdapterGrifinoriaMembres()
         //binding.rvGrifinoriaMembres.adapter = adapter
-
          val layoutManager = GridLayoutManager(activity, 2)
          layoutManager.orientation = RecyclerView.VERTICAL
          binding.rvGrifinoriaMembres.layoutManager = layoutManager
          binding.rvGrifinoriaMembres.adapter = adapter
+
+        binding.rvGrifinoriaMembres.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                if (layoutManager.findFirstVisibleItemPosition() == 0) {
+                    binding.fabGriffindor.visibility = View.GONE
+                } else binding.fabGriffindor.visibility = View.VISIBLE
+            }
+        })
+        binding.fabGriffindor.setOnClickListener {
+            binding.rvGrifinoriaMembres.scrollToPosition(0)
+        }
 
         viewModel.personagemItem.observe(viewLifecycleOwner) { listPersonagens ->
             getMembresGrifindor(listPersonagens)

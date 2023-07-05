@@ -29,25 +29,11 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
-        <!--ImageView
-            android:id="@+id/imagePeople"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="50dp"
-            android:gravity="center"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:srcCompat="@tools:sample/avatars" /-->
-
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imagePeople"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_marginTop="50dp"
-            android:src="@tools:sample/avatars"
             app:civ_border_color="#8A0827"
             app:civ_border_width="2dp"
             android:gravity="center"
@@ -441,10 +427,10 @@
             android:id="@+id/card_my_house"
             android:layout_width="160dp"
             android:layout_height="130dp"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"
             android:visibility="visible"
+            app:layout_constraintEnd_toStartOf="@+id/card_house"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/card_patrono">
 

@@ -45,12 +45,23 @@ class CorvinalFragment : Fragment() {
 
     private fun setupAdapter() {
         adapter = AdapterCorvinalMembres()
-        //binding.rvCorvinalMembres.adapter = adapter
 
          val layoutManager = GridLayoutManager(activity, 2)
          layoutManager.orientation = RecyclerView.VERTICAL
          binding.rvCorvinalMembres.layoutManager = layoutManager
          binding.rvCorvinalMembres.adapter = adapter
+
+        binding.rvCorvinalMembres.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                if (layoutManager.findFirstVisibleItemPosition() == 0) {
+                    binding.fabCorvinal.visibility = View.GONE
+                } else binding.fabCorvinal.visibility = View.VISIBLE
+            }
+        })
+        binding.fabCorvinal.setOnClickListener {
+            binding.rvCorvinalMembres.scrollToPosition(0)
+        }
 
         viewModel.personagemItem.observe(viewLifecycleOwner) { listPersonagens ->
             getMembresGrifindor(listPersonagens)

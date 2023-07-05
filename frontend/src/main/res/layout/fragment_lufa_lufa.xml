@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#191919"
+    android:background="@color/black"
     android:screenReaderFocusable="true"
     tools:context=".ui.lufalufaMembres.LufaLufaFragment">
 
@@ -24,7 +24,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#191819"
+            android:background="@color/black"
             android:paddingBottom="8dp"
             android:screenReaderFocusable="true">
 
@@ -78,7 +78,6 @@
         android:id="@+id/rvLufalufaMembres"
         android:layout_width="330dp"
         android:layout_height="404dp"
-        android:background="#191919"
         android:scrollbars="vertical"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp"
@@ -89,5 +88,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/includeDivider"
         tools:listitem="@layout/house_membrer" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_lufalufa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        android:clickable="true"
+        android:src="@drawable/baseline_keyboard_double_arrow_up_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@android:color/white"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

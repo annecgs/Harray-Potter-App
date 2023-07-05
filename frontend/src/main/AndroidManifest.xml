@@ -14,11 +14,13 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".ui.onboarding.OnboardingActivity"
+            android:theme="@style/Theme.HarrayPotterApp.NoActionBar"
             android:exported="false" />
         <activity
             android:name="com.example.frontend.ui.activity.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.HarrayPotterApp.NoActionBar" />
+            android:theme="@style/Theme.HarrayPotterApp.NoActionBar"
+            android:label="@string/app_name" />
         <activity
             android:name="com.example.frontend.ui.activity.splashScreen.SplashScreen"
             android:exported="true"
@@ -26,7 +28,6 @@
             android:theme="@style/Theme.HarrayPotterApp.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
