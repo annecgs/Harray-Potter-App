@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -85,26 +86,31 @@ class MainActivity : AppCompatActivity() {
 
             if(id == R.id.nav_corvinal){
                 replaceFragment(CorvinalFragment())
+                configTitleToolbar(applicationContext.getString(R.string.menu_ravenclaw))
                 closeDrawer()
             }
 
             if(id == R.id.nav_griffindor){
                 replaceFragment(GrifinoriaFragment())
+                configTitleToolbar(applicationContext.getString(R.string.menu_griffindor))
                 closeDrawer()
             }
 
             if(id == R.id.nav_lufalufa){
                 replaceFragment(LufaLufaFragment())
+                configTitleToolbar(applicationContext.getString(R.string.menu_hufflepuff))
                 closeDrawer()
             }
 
             if(id == R.id.nav_sonserina){
                 replaceFragment(SonserinaFragment())
+                configTitleToolbar(applicationContext.getString(R.string.menu_slytherin))
                 closeDrawer()
             }
 
             if(id == R.id.nav_favoritos){
                 replaceFragment(FavoritesFragment())
+                configTitleToolbar(applicationContext.getString(R.string.menu_favoritos))
                 closeDrawer()
             }
 
@@ -139,6 +145,18 @@ class MainActivity : AppCompatActivity() {
             })
         }
     }
+
+    @RequiresApi(Build.VERSION_CODES.M)
+    fun configTitleToolbar(title:String){
+        setSupportActionBar(findViewById(R.id.toolbar))
+        val toolbar = findViewById<Toolbar>(R.id.toolbar) as androidx.appcompat.widget.Toolbar
+        if(toolbar != null) {
+            setSupportActionBar(toolbar)
+            toolbar.setTitleTextColor(applicationContext.getColor(R.color.white))
+            toolbar.setTitle(title)
+        }
+    }
+
 
     @RequiresApi(Build.VERSION_CODES.M)
     fun configMenu(){

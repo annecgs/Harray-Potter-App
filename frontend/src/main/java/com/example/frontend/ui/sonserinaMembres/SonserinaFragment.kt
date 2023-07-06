@@ -38,7 +38,7 @@ class SonserinaFragment : Fragment() {
     ): View? {
         _binding = FragmentSonserinaBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        //(activity as AppCompatActivity).supportActionBar?.title?.get(R.string.menu_slytherin)
+        //(activity as AppCompatActivity)!!.supportActionBar?.title?.get(R.string.menu_slytherin)
         setupAdapter()
         OnboardingActivity.screen = 5
         return root

@@ -35,7 +35,7 @@ class LufaLufaFragment : Fragment() {
     ): View? {
         _binding = FragmentLufaLufaBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        //(activity as AppCompatActivity).supportActionBar?.title?.get(R.string.menu_hufflepuff)
+        //(activity as AppCompatActivity)!!.supportActionBar?.title?.get(R.string.menu_hufflepuff)
         setupAdapter()
         OnboardingActivity.screen = 4
         return root

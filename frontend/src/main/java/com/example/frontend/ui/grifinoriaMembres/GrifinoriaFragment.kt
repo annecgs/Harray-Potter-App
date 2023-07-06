@@ -36,7 +36,7 @@ class GrifinoriaFragment : Fragment() {
 
         _binding = FragmentGrifinoriaBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        //(activity as AppCompatActivity).supportActionBar?.title?.get(R.string.menu_griffindor)
+        //(activity as AppCompatActivity)!!.supportActionBar?.title?.get(R.string.menu_griffindor)
         OnboardingActivity.screen = 2
         setupAdapter()
 

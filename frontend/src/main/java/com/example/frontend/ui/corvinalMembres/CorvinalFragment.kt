@@ -42,7 +42,7 @@ class CorvinalFragment : Fragment() {
 
         _binding = FragmentCorvinalBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        //(activity as AppCompatActivity).supportActionBar?.title?.get(R.string.menu_ravenclaw)
+        //(activity as AppCompatActivity)!!.supportActionBar?.title?.get(R.string.menu_ravenclaw)
         setupAdapter()
         //(activity as MainActivity?)!!.configMenu()
         OnboardingActivity.screen = 3

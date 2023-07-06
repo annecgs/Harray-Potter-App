@@ -35,7 +35,7 @@ class FavoritesFragment : Fragment() {
     ): View? {
         _binding = FragmentFavoritesBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        //(activity as AppCompatActivity).supportActionBar?.title?.get(R.string.menu_favoritos)
+        //(activity as AppCompatActivity)!!.supportActionBar?.title?.get(R.string.menu_favoritos)
         setupAdapter()
         OnboardingActivity.screen = 6
         return root
