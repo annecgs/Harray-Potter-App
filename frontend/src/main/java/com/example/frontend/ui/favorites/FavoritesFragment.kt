@@ -17,6 +17,7 @@ import com.example.frontend.R
 import com.example.frontend.databinding.FragmentFavoritesBinding
 import com.example.frontend.ui.error.ErrorFragment
 import com.example.frontend.ui.home.InfoFragment
+import com.example.frontend.ui.onboarding.OnboardingActivity
 import com.example.frontend.ui.viewModel.MainViewModel
 import com.example.frontend.utils.Helpers
 
@@ -36,7 +37,7 @@ class FavoritesFragment : Fragment() {
         val root: View = binding.root
         //(activity as AppCompatActivity).supportActionBar?.title?.get(R.string.menu_favoritos)
         setupAdapter()
-
+        OnboardingActivity.screen = 6
         return root
     }
 

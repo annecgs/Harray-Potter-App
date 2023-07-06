@@ -17,6 +17,7 @@ import com.example.frontend.R
 import com.example.frontend.databinding.FragmentGrifinoriaBinding
 import com.example.frontend.ui.error.ErrorFragment
 import com.example.frontend.ui.home.InfoFragment
+import com.example.frontend.ui.onboarding.OnboardingActivity
 import com.example.frontend.ui.viewModel.MainViewModel
 import com.example.frontend.utils.Helpers
 
@@ -36,6 +37,7 @@ class GrifinoriaFragment : Fragment() {
         _binding = FragmentGrifinoriaBinding.inflate(inflater, container, false)
         val root: View = binding.root
         //(activity as AppCompatActivity).supportActionBar?.title?.get(R.string.menu_griffindor)
+        OnboardingActivity.screen = 2
         setupAdapter()
 
         return root

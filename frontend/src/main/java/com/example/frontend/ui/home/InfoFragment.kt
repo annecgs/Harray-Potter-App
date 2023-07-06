@@ -16,7 +16,6 @@ import com.example.backend.data.remote.dto.PersonagensItem
 import com.example.frontend.R
 import com.example.frontend.databinding.FragmentInfoBinding
 import com.example.frontend.ui.activity.MainActivity
-import com.example.frontend.ui.home.HomeFragment.Companion.valueReturn
 import com.example.frontend.ui.viewModel.MainViewModel
 import com.example.frontend.utils.Helpers
 
@@ -37,8 +36,6 @@ class InfoFragment : Fragment() {
         setupAdapter()
 
         (activity as MainActivity?)!!.returnDetails("Details")
-
-        valueReturn = 1
 
         return view
     }

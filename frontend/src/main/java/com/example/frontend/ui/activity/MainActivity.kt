@@ -12,6 +12,8 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -19,6 +21,12 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.frontend.R
 import com.example.frontend.databinding.ActivityMainBinding
+import com.example.frontend.ui.corvinalMembres.CorvinalFragment
+import com.example.frontend.ui.favorites.FavoritesFragment
+import com.example.frontend.ui.grifinoriaMembres.GrifinoriaFragment
+import com.example.frontend.ui.lufalufaMembres.LufaLufaFragment
+import com.example.frontend.ui.onboarding.OnboardingActivity.Companion.screen
+import com.example.frontend.ui.sonserinaMembres.SonserinaFragment
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -48,10 +56,10 @@ class MainActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= 19) {
             window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
         }
-        if (Build.VERSION.SDK_INT >= 21) {
+        /*if (Build.VERSION.SDK_INT >= 21) {
             setWindowFlag(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, false)
-            window.statusBarColor = Color.TRANSPARENT
-        }
+            window.statusBarColor = Color.BLACK
+        }*/
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
@@ -75,6 +83,31 @@ class MainActivity : AppCompatActivity() {
         navView.setNavigationItemSelectedListener(NavigationView.OnNavigationItemSelectedListener { menuItem ->
             val id = menuItem.itemId
 
+            if(id == R.id.nav_corvinal){
+                replaceFragment(CorvinalFragment())
+                closeDrawer()
+            }
+
+            if(id == R.id.nav_griffindor){
+                replaceFragment(GrifinoriaFragment())
+                closeDrawer()
+            }
+
+            if(id == R.id.nav_lufalufa){
+                replaceFragment(LufaLufaFragment())
+                closeDrawer()
+            }
+
+            if(id == R.id.nav_sonserina){
+                replaceFragment(SonserinaFragment())
+                closeDrawer()
+            }
+
+            if(id == R.id.nav_favoritos){
+                replaceFragment(FavoritesFragment())
+                closeDrawer()
+            }
+
             if(id == R.id.nav_logout){
                 //configAlertDiolog()
                 finish()
@@ -82,6 +115,13 @@ class MainActivity : AppCompatActivity() {
 
             true
         })
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        val transation = supportFragmentManager.beginTransaction()
+        transation.replace(R.id.nav_host_fragment_content_main, fragment)
+        transation.addToBackStack(null)
+        transation.commit()
     }
 
     @RequiresApi(Build.VERSION_CODES.M)
@@ -93,7 +133,10 @@ class MainActivity : AppCompatActivity() {
             toolbar.setTitleTextColor(applicationContext.getColor(R.color.white))
             toolbar.title = name
             toolbar.setNavigationIcon(R.drawable.baseline_keyboard_arrow_left_24)
-            toolbar.setNavigationOnClickListener(View.OnClickListener { onBackPressed() })
+            toolbar.setNavigationOnClickListener(View.OnClickListener {
+                onBackPressed()
+                configMenu()
+            })
         }
     }
 
@@ -105,6 +148,31 @@ class MainActivity : AppCompatActivity() {
             setSupportActionBar(toolbar)
             toolbar.setTitleTextColor(applicationContext.getColor(R.color.white))
             toolbar.setNavigationIcon(R.drawable.baseline_menu_24)
+            when(screen){
+                1 -> {
+                    toolbar.setTitle(R.string.menu_home)
+                }
+
+                2 -> {
+                    toolbar.setTitle(R.string.menu_griffindor)
+                }
+
+                3 -> {
+                    toolbar.setTitle(R.string.menu_ravenclaw)
+                }
+
+                4 -> {
+                    toolbar.setTitle(R.string.menu_hufflepuff)
+                }
+
+                5 -> {
+                    toolbar.setTitle(R.string.menu_slytherin)
+                }
+
+                else -> {
+                    toolbar.setTitle(R.string.menu_favoritos)
+                }
+            }
             toolbar.setNavigationOnClickListener(View.OnClickListener {openDrawer()})
         }
     }
@@ -112,6 +180,11 @@ class MainActivity : AppCompatActivity() {
     fun openDrawer(){
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         drawerLayout.openDrawer(GravityCompat.START)
+    }
+
+    fun closeDrawer(){
+        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
+        drawerLayout.closeDrawers()
     }
 
     private fun configAlertDiolog(){

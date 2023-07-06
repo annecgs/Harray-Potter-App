@@ -17,6 +17,7 @@ import com.example.frontend.R
 import com.example.frontend.databinding.FragmentSonserinaBinding
 import com.example.frontend.ui.error.ErrorFragment
 import com.example.frontend.ui.home.InfoFragment
+import com.example.frontend.ui.onboarding.OnboardingActivity
 import com.example.frontend.ui.viewModel.MainViewModel
 import com.example.frontend.utils.Helpers
 import kotlinx.android.synthetic.main.fragment_error.view.*
@@ -39,7 +40,7 @@ class SonserinaFragment : Fragment() {
         val root: View = binding.root
         //(activity as AppCompatActivity).supportActionBar?.title?.get(R.string.menu_slytherin)
         setupAdapter()
-
+        OnboardingActivity.screen = 5
         return root
     }
 

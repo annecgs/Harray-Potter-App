@@ -122,4 +122,8 @@ class OnboardingActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    companion object {
+        var screen: Int = 0
+    }
+
 }

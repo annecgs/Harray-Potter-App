@@ -21,6 +21,7 @@ import com.example.frontend.R
 import com.example.frontend.databinding.FragmentHomeBinding
 import com.example.frontend.ui.activity.MainActivity
 import com.example.frontend.ui.error.ErrorFragment
+import com.example.frontend.ui.onboarding.OnboardingActivity.Companion.screen
 import com.example.frontend.ui.viewModel.MainViewModel
 import com.example.frontend.utils.Helpers
 import kotlinx.android.synthetic.main.layout_header.view.*
@@ -42,9 +43,9 @@ class HomeFragment: Fragment() {
         val root: View = binding.root
         setupUi()
 
-        if(valueReturn == 1){
-            (activity as MainActivity?)!!.configMenu()
-        }
+        //(activity as AppCompatActivity)!!.supportActionBar?.setTitle(R.string.menu_home)
+
+        screen = 1
 
         if (Build.VERSION.SDK_INT >= 21) {
             val window = (activity as AppCompatActivity).window
@@ -186,9 +187,5 @@ class HomeFragment: Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    companion object {
-        var valueReturn: Int = 0
     }
 }
