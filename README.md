@@ -49,12 +49,17 @@ favorito)</li>
 <img src="https://github.com/annecgs/Harray-Potter-App/assets/103140224/49073493-3833-40a0-b819-2362b1ecab3d" width="220px" height="350px"/>
 <img src="https://github.com/annecgs/Harray-Potter-App/assets/103140224/00b00d03-e7f0-44ae-acda-4574859208ae" width="220px" height="350px"/>
 <img src="https://github.com/annecgs/Harray-Potter-App/assets/103140224/3351e568-a1b6-49a3-830c-8476e988468b" width="220px" height="350px"/>
+<img src="https://github.com/annecgs/Harray-Potter-App/assets/103140224/13688237-4102-404b-8c89-fdf765c5ac05" width="220px" height="350px"/>
+<img src="https://github.com/annecgs/Harray-Potter-App/assets/103140224/f9bc5393-3f76-4fbb-8222-c52c74f41162" width="220px" height="350px"/>
+<img src="https://github.com/annecgs/Harray-Potter-App/assets/103140224/6a208895-6ecb-4db4-b534-f0270c64d00d" width="220px" height="350px"/>
+<img src="https://github.com/annecgs/Harray-Potter-App/assets/103140224/fcd97925-f877-461b-ba44-817ec7759640" width="220px" height="350px"/>
+<img src="https://github.com/annecgs/Harray-Potter-App/assets/103140224/b998cecd-ec3f-4eb5-8a9c-73273dc4882b" width="220px" height="350px"/>
 </p>
 
 <h2>Aplicação da acessibilidade</h2>
 
-
 <li>Adição de etiquetas com contentDescription</li>
+
 
 <li>Elementos editáveis aplicação android:hint e android:labelFor</li>
 <li>Grupos de conteúdo relacionado aplicação do android:screenReaderFocusable do objeto de contêiner como true e o atributo android:focusable de cada objeto interno como false.</li>
