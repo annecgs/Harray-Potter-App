@@ -54,7 +54,12 @@ favorito)</li>
 <img src="https://github.com/annecgs/Harray-Potter-App/assets/103140224/6a208895-6ecb-4db4-b534-f0270c64d00d" width="220px" height="350px"/>
 <img src="https://github.com/annecgs/Harray-Potter-App/assets/103140224/fcd97925-f877-461b-ba44-817ec7759640" width="220px" height="350px"/>
 <img src="https://github.com/annecgs/Harray-Potter-App/assets/103140224/b998cecd-ec3f-4eb5-8a9c-73273dc4882b" width="220px" height="350px"/>
+<img src="https://github.com/annecgs/Harray-Potter-App/assets/103140224/f94dc7aa-cc87-42af-9356-ab16a937f2b5" width="220px" height="350px"/>
+<img src="https://github.com/annecgs/Harray-Potter-App/assets/103140224/ea747eaa-14d4-442e-988a-7c8427b397e6" width="220px" height="350px"/>
+<img src="https://github.com/annecgs/Harray-Potter-App/assets/103140224/192d15a8-79e6-4c9d-b919-2145f0c21686" width="220px" height="350px"/>
+<img src="https://github.com/annecgs/Harray-Potter-App/assets/103140224/eccb74f7-b68c-4e18-a250-6b02ccac8aa0" width="220px" height="350px"/>
 </p>
+
 
 <h2>Aplicação da acessibilidade</h2>
 
